@@ -1,0 +1,2 @@
+spotify_scraper>=3.9.0
+python-dotenv>=1.0.0

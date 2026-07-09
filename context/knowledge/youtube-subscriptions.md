@@ -1,0 +1,100 @@
+# YouTube Subscriptions (from Takeout export, 2026-07-08)
+
+Source: `Takeout/YouTube and YouTube Music/subscriptions/subscriptions.csv` (88 channels).
+Purpose: feed for the Oxy OS "notify when favorite YouTubers post" automation.
+
+## Full list (Title — Channel Id)
+- Daniel Barada — UC-Pr8PZsZ9ok7Ith3LlFZDw
+- Bilal Kamarieh — UC07lRcBhjIJYbw1AHmVXYvw
+- UrsKalecinskiTV — UC110sPkp4cqssvlFBI6iOTw
+- RepOne — UC1YADBsoDnowlqQbtx0PjbA
+- Aba William — UC1uEIIdQo0F6wLV-XSMCSvQ
+- Fabian Huber — UC2qwc_3-QDMaqpkROR6r7wA
+- Ben AI — UC3KK7ENB_ierAXvrxVNnbZQ
+- Theo Tanchak — UC3hbdzgSzisn5GONpk0Xlzg
+- Chris Bumstead — UC4514FwdRy5gI6CdC9GPb0w
+- Rowan — UC4VRuIXIYtZd0yh1MRd9DCg
+- Dylan Calisthenx — UC4meh_SCbsNM2R49iwQZ8uA
+- Tristyn Lee — UC53s-VII9tDkMRzg2zqFzmw
+- Jeff Nippard — UC68TLK0mAEzUyHx5x5k-S1Q
+- Greg Lav — UC6vuqBzXNU8mLQvZmjl__Cg
+- JAN — UC8-g7Rs0k7vWAoUZHEBdtaw
+- William Niewiara — UC9wj8KPMMTnZyk0lFGlnicg
+- EINFACH FUSSBALL. — UCAWasvnUzSnIfNkAHIifNFg
+- DAZN UEFA Champions League — UCB-GdMjyokO9lZkKU_oIK6g
+- Will Tennyson — UCB2wtYpfbCpYDc5TeTwuqFA
+- SuperSimpleDev — UCB6dvaWu0N8uVq2yKsZ5s5g
+- Lukas Liebing — UCBBugia9zqyt3P7TPORlxqg
+- Mike and Matty — UCBX_-ls-dXuhFNSWSXcHrTA
+- Iamanael — UCDKa1nYob_oHk_g62yLoOAA
+- Bryce Crawford Podcast — UCE63fBeQIoJ2P2mlBkQDchA
+- Football Made Simple — UCFY0YHhxiIQWYYsLgeUBcbg
+- Kay Gedan — UCFc3ac8bjMVcSK252ydB9fg
+- Coach Andy — UCFqqXmb6tTzx6jrcf77KTgg
+- Paulo Guga — UCFvWOQur3DkGZ0Kfmns-7iw
+- 𝐌𝐫.𝐋𝐢𝐭𝐞𝐫𝐚𝐥𝐥𝐲𝐌𝐞 — UCGaH1eGCrg5paIp5bP9J40w
+- Bodybuilding Bene — UCJbAsPk-U9VUUyHZBBiWOfg
+- Borussia Dortmund — UCK8rTVgp3-MebXkmeJcQb1Q
+- Simplicissimus — UCKGMHVipEvuZudhHD05FOYA
+- Isaac — UCKahK37d-asjW3nqAK3KEEA
+- Greg Doucette — UCLqH-U2TXzj1h7lyYQZLNQQ
+- Kai Notebook — UCNhWSOlt_UoCzS2YSMhHYmA
+- Geoffrey Verity Schofield — UCObA5o3mcc1felIMAv6cukw
+- Rising Ballers — UCOlRpr6KnYRFSERY5wLUc9Q
+- Anton — UCSl6I450DpPuxfCT1z1DHzQ
+- Trstnnlifts — UCTLWIfMJ-4GBImYb_LbS7BA
+- Dominik Lebersorger — UCTXLdE42aCyk4BdshycdcSA
+- Max || Editor — UCU88AMwgEL9An2HpdAV8DTA
+- Alex Hormozi — UCUyDOdBWhC1MCxEjC46d-zw
+- Okan Akbalik — UCV0D3_F68DunQlWbViDgZRw
+- James Li — UCV9Q7hKsPHf82RfoXWBK5uQ
+- Red Corner MMA — UCX4Mc5c5eqKtGvfNl--vrSQ
+- Andrej Karpathy — UCXUPKJO5MZQN11PqgIvyuvQ
+- Nilliam Wiewiara — UCXhq6GISPC2jvpML-_xzcMA
+- Arda Saatçi — UCY3nSxSRpnpsjZ4p15iZxow
+- Clark Kent — UCY5TuLTxx-f8R84ZMJE5PKg
+- Money Mind Unfiltered — UCYHf6eFhOH61PS8NCon5ieA
+- Eric Janicki — UCYYZaF5x2nAb-wvmDyTAnwg
+- someunfilteredguy — UCZJxnraUMX4BXGCFTZO14xw
+- Dabby — UCZmv8aMKJ_NyS5uFJK_R8lg
+- Christian Wolf — UC_NsZgQdK4lTleq_siGOdJw
+- Tim Erens — UC__k9W3l_AIuY8KYn_L-ICA
+- Germanbull3 — UCatcB2I-S4rorA_2KzjluSg
+- FranklinTV — UCayD7p9ASZYexlAnDu7m1Dw
+- Reysu — UCbDmEdLs-SB3FjrDFQJ4TDg
+- BiloBilo — UCcGdEaYDZt7HryBWKAfQQGg
+- EliteScholars Football — UCeXp_jcXO8GV436t7mPP_4w
+- Basement Bodybuilding — UCf33v9eZOy59r7HM44ni_4Q
+- VfL Wolfsburg — UCfdfDFNp50xLjAjD0TKOa4g
+- Outdoor Boys — UCfpCQ89W9wjkHc8J_6eTbBg
+- Erik Cupsa — UCgKFOz_KrMbmypWrawtzDQg
+- Teachingmensfashion — UChNN7VBxPTiNrqjUaQd9bxA
+- Russell Wofford — UChWoaUKGr4JCI6DGBKn_oBQ
+- Daniel Kubik — UCh_1aALCZcgPlY6kJ6gJpqQ
+- Stratagem — UCk3zZzeoP5AquxYS8oYJA9g
+- Mark Builds Brands — UCkRbLkvUX5zuwnKOBwFHOjg
+- DylanD — UClfh-374xnMUQDzdXvP_yqQ
+- AJ's Life — UCm9UaqcjedkALtwlbdw4ECQ
+- Arda Saatci Highlights — UCn2OICiqbT787uMqS3iQHWA
+- Steven Muka — UCnV9NW7dlxSLEALqsTrIALw
+- TNF — UCnZH_HMJwxseGWN1qyG4Y1g
+- 3.7Million — UCohkCVfU-15iRhmInV14AyQ
+- Sleepy Charlie — UCp-R630BEr1UHsvh6HUh8fQ
+- Jacob Juul Hansen — UCpJ9TnY2lTA3vBgnq7r5Wmg
+- Found And Explained — UCpM4zrZ9c_apiEj6CApj2yw
+- Urs Kalecinski — UCpTQ3wtr2BSG1J9VESsDOwA
+- The Franklin — UCribK282VRISPzYnW1WIieA
+- GYMDANN — UCrjEFYWF5MSMXEPRfUKo3Ww
+- Jeff Nippard Extras — UCsUa0GdUH7n0WGG1qqrGXsQ
+- SkillersTV — UCsYFm-9E1zC-UThnMWOUCyQ
+- Edmund Yong — UCuKVsDS3oVzTuNjnQ79pEEg
+- Sky Sport DE — UCuOwl-VgqBHOzR8hWnonBcA
+- UFC — UCvgfXK4nTYKudb0rFR6noLA
+- PowerfulJRE — UCzQUP1qoWDoEbmsQxvdjxgQ
+
+## Thematic clusters (useful for automation filtering)
+- **AI / Tech / Build:** Ben AI, SuperSimpleDev, Andrej Karpathy, James Li, Found And Explained, Mark Builds Brands, Kai Notebook, Ben AI
+- **Business / Money:** Alex Hormozi, Money Mind Unfiltered, someunfilteredguy, Mark Builds Brands, Stratagem
+- **Bodybuilding / Hypertrophy (silent expertise area):** Jeff Nippard, Chris Bumstead, Tristyn Lee, Greg Doucette, Geoffrey Verity Schofield, Bodybuilding Bene, Basement Bodybuilding, Urs Kalecinski, UrsKalecinskiTV, Trstnnlifts, Eric Janicki, Dylan Calisthenx, Nilliam Wiewiara, William Niewiara, Rowan, Greg Lav, JAN, Paulo Guga, Coach Andy, RepOne, Edmund Yong, Jacob Juul Hansen, DylanD, Anton, Isaac, Daniel Kubik, Timothy Erens
+- **Football / Soccer:** EINFACH FUSSBALL., DAZN UEFA Champions League, Football Made Simple, Borussia Dortmund, VfL Wolfsburg, Rising Ballers, EliteScholars Football, SkillersTV, Germanbull3, FranklinTV, The Franklin, Reysu, BiloBilo, TNF, Red Corner MMA, UFC, Sky Sport DE
+- **Lifestyle / Other:** Outdoor Boys, Teachingmensfashion, PowerfulJRE, Will Tennyson, Mike and Matty, AJ's Life, Iamanael, Simplicissimus, Clark Kent, Mr. LiterallyMe, 3.7Million, Sleepy Charlie, GYMDANN, Dabby, Christian Wolf, Daniel Barada, Bilal Kamarieh, Fabian Huber, Theo Tanchak, Arda Saatçi, Arda Saatci Highlights, Steven Muka, Lukas Liebing, Erik Cupsa, Russell Wofford

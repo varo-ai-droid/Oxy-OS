@@ -1,0 +1,1381 @@
+Episode: 019 Cluster Sets – How they work and how to use them
+URL: https://open.spotify.com/episode/3onK5D0syOPu0tzLOxqZ2R
+Published: 2025-09-29
+================================================================================
+
+Welcome back everyone to another episode.
+I hope you're all doing well.
+Good evening.
+Good morning, Chris.
+How are you today?
+I'm doing very well.
+Thanks, Jake.
+It is actually morning for me this time, which is the thing.
+This time it's around.
+Yeah, it's like, it's like a lucky dip every week.
+I don't know.
+No one knows there's going to be morning for you, Evening for me.
+It's afternoon for me today.
+I think this is the first afternoon what I've done.
+So we're just we just pick random times every week.
+It's always a bit of fun.
+Anyway, I have another Ridge Park.
+We're having a bit of a joke before we started recording because I suggested another Ridge Park plan
+for you guys today and you laughed at me and you guys, this is you.
+This is the third one in a row, which it's not, it's only the second, but this is the third one we
+have talked about so far.
+However, I do think it is a very interesting plan and I do guarantee you guys that next week I won't
+talk about Dredge Park for anyone else who's getting a bit sick of it now, last week if you guys
+listened, I shared a calf specialization phase and it was quite interesting.
+And I think you should go back and listen if you haven't.
+And it's quite relevant for some of the conversations happening today.
+And I think we can obviously learn quite a lot from how these guys were doing things.
+And in fact, I meant to tell you in the gym today, I actually saw someone on the standing calf
+raised machine and they're abandoning it.
+And it was very interesting to me because we were talking about this in judges planned last week,
+where at the end of his standing calf phrase, he talked about doing the isometric essentially to to
+fatigue a failure at the the end of the set.
+And it basically achieves the same thing as banding it.
+Because obviously with a lot of people will find with a standing calf phrase, the limitations on the
+load.
+And if you, you can use a full stack and sometimes you might be able to do 203040 repetitions with
+it.
+So the band allows one to get to failure quicker, but obviously it makes the top of that repetition
+the most challenging part, which is not necessarily ideal for the gastroc.
+So it was interesting to see kind of the same mentality as what Reg was doing 75 years ago back with
+a band in the modern gym.
+Anyway, for me it's a bit of a felt like an inception or something like that.
+Anyway, today I have a chest specialization phase and we're not actually talking about chest today,
+but there is something relevant to it and you'll learn what that is shortly.
+So as I mentioned last week with the calf specialization, the idea of these specialization phases is
+that you do them alongside your other work.
+So this is part of a full body plan.
+You take out the usual chest work or the the work that's overlapping and you do this instead.
+And then you do your, your other stuff.
+Now this does have a leg exercise in there, just one leg exercise, a squat, which I'll talk about.
+But you would obviously probably use this as your leg exercise and take out the the other leg stuff
+as well.
+So you can kind of like mix and match a little bit.
+So I'm just gonna talk about the, the chest stuff and and the squat exercise.
+So like I said, this is going to be incorporated in a full body plan.
+Now we start with an incline bench and for each of these exercises, actually there's he does three
+sets of each exercise.
+OK, so each exercise I mentioned three sets of each with the exception of the squat.
+And so we start with an incline bench and this is moderate drips.
+He's doing like 8 to 10 for each of these.
+So incline bench, which are not that it particularly matters, but the way that they did the incline
+bench back then was often a little bit different, was actually more of a, a standing incline bench.
+I don't know if you've seen these.
+Have you seen the pictures or no?
+You're having your shaking head O it was kind of like a, I guess like a long board and you would
+lean against it.
+There's photos of Steve doing these.
+I'm not sure if I've seen any photos of Reg.
+I don't know at what point they introduced like the standard incline bench, but for all intents and
+purposes, it'd be very similar.
+So I guess you could call it a standing incline bench.
+And then we move into a dumbbell bent pullover and then we go into our squat.
+Now you guys are going to pay attention here the way we did.
+No, the way Greg did this squat is he would do 20 repetitions in total and he would use a heavy
+load.
+Now these guys love to just kind of give vague instructions like heavy load or moderate load.
+So he didn't exactly explain what the heavy load was, but obviously it should be a load that'll be
+challenging for what I'm about to share.
+And every 3rd breath he would do 1 repetition.
+So he would breathe in deeply twice.
+And on the third he would do a repetition and repeat that.
+And he says as he got to 10 to 15 repetitions, he would then up it to five breaths between each
+repetition until you get to 20.
+So there's a few different ways of doing that.
+So people will call this breathing squats, A20 Rep squat method.
+There's a few different names for it.
+Very popular in the silver area, sort of into the golden area.
+It is popular as well.
+Then it sort of fell out of a little bit, but there's a few different sort of loading structures
+people use.
+Usually people would say you start with A10 Rep Max, but generally in those scenarios they would say
+you would start this sort of breathing stuff in the the 10th repetition onwards or 8 to 10
+repetitions onwards.
+So the fact that they're just saying hey, from the get go from the first repetition we're doing
+this, that insinuates me that he's using a heavier load.
+So he went from that into dumbbell flies.
+Now he called these breathing dumbbell flies, which I think basically just meant that you're still
+kind of out of breath from the squat.
+And this was sort of, they had a bit of an idea that doing pullovers or flies, some kind of chest
+exercise after the squat somehow had like a rib cage expanding effect, which I don't know if you'll
+comment on that in a moment, but I don't imagine there's a whole lot to that.
+But they, I don't know, a lot of people talked about it.
+And then he went back into the dumbbell pullover, which again was part of that chest rib cage
+expansion idea.
+So I don't think he went very heavy with that.
+I don't think that's kind of the idea.
+That was more like is a stretching exercise, if you will, rather than Max effort.
+And then he went into dips and then you would add whatever else you wanted to add.
+So there's a fair bit of work there and some bloody exhausting squats.
+What do you make of that?
+So obviously it's difficult to talk about exercise selection because the context of this program is
+such that it's adding to or fitting in with something that is already being done.
+What I can't or what we perhaps can't do this time is to say, oh, well, you know, this exercise
+selection suggests that, you know, they're missing these or they're benefiting from this because
+there isn't a complete program.
+So really, I think as we were talking about before, you know, we got on the podcast, the interesting
+thing for us today is this breathing squat section and, and what that entails and what's actually
+happening.
+So, you know, unless you have any other comments on the other parts of the program, I would suggest
+we just jump in and talk about that.
+Yeah.
+I think it's interesting just to note the diversity in the chest exercises that he was doing.
+So obviously we've got an incline bench, then we've got a flat.
+No, not in that order, but we've got incline bench.
+We've got to fly, got to pull over the dips.
+Obviously that'll depend a little bit on how they're being done, but it's just interesting that he
+has somewhat achieved or managed to, you know, bias different regions within a few different
+exercises.
+So I think there's a bit of intuition that's gone into this.
+Sure.
+I think, but I would probably also mention that there is a very popular idea that incline benches
+are curricular PEC and flat benches are you know, kind of sort of more sternal or more kind of a mix
+of the of the three regions.
+And while that's not untrue, it has a far smaller effect than moving between transverse and sagittal
+plane pressing.
+So often when people say to me, what's the best exercise for clavicular PEC or what's the best
+exercise for sternal PEC.
+And my focus immediately is on the plane of motion, not on the range of motion because really the
+resistance profile, because really when you're moving between incline bench and flat bench or any
+other inclined bench, you're just changing the range of motion or the the point of peak effort in
+the shoulder angle or the shoulder joint angle range of motion.
+Whereas plane of motion where you're coming from wide grip transverse into narrow grip sagittal that
+has an enormous impact.
+And the clavicular is much more involved in sagittal than it is in the transverse.
+So without that knowledge of which planes of motion is using for his pressing, I mean, if his
+incline press is more sagittal, then straight away he's ticking the locks as far as I'm concerned.
+But if it's just like, Oh well, we're doing the same grip width, but we just happening to be going,
+you know, kind of incline in this particular variation and flat in this variation.
+And I'm like, well, honestly, you're not probably maximizing your kind of focus on clavicular versus
+sternal or anything like that.
+But if the information is not there, I just don't know.
+He did.
+So he in this, he was actually using dumbbells and the photos I've seen of him doing dumbbells, he's
+usually using a relatively close grip.
+So I do think there's going to be a little bit of that that variant there.
+And he does, he actually didn't do it in this program, which is interesting because a lot of his
+programs he's doing a very wide grip bench and he didn't have the bench in this program.
+And I guess maybe because he's got the the fly instead.
+But it would be interesting to contrast or to have that combination of a fairly close grip dumbbell
+incline bench with a very like if you see photos of him benching often, his grip is as wide as he
+can get up against collars.
+So that combo I think would be quite effective.
+Or even the fly, I mean pair the fly with the narrow grip incline mentioned.
+Yes, I think you're probably mostly there and then the pullovers will give you some sternal, sorry,
+coastal PEC.
+So you've got the the fly for the sternal, the narrow grip incline for the clavicular and then
+you've got the pullover for the coastal.
+And I think, yeah, that would be, you know, your complete program, I think in all, to all intents
+and purposes.
+With the pullover one way they used to do this and I think Greg did it as well.
+I think they call it a moon bench.
+Have you heard of this?
+So it's kind of like a semi circle bench and you would lie over the top so you're arching all the
+way over it and then perform the pullover like that.
+So I guess you're kind of a little bit more in a in a decline position.
+What difference would that make?
+I'm going to have to try and think about the resistance profile in my head now.
+So let's just start with a horizontal pullover.
+If you're lying horizontally on a bench and what it's going to do, it's going to move the resistance
+profile away from the stretch position towards the neutral position.
+So if you're lying horizontally, the most difficult part of the range of motion is when the external
+moment on is obviously longest.
+And that is in that stretch position because you know, gravity goes straight downwards and you're
+perpendicular to it in that position.
+So if you then move to a tilted position, so you're now, you know, kind of if you take it to an
+extreme and imagine that you're actually, you know, kind of pointing directly downwards, which is
+obviously not true, but you know, just take it to an extreme.
+Your external moment I'm still is longest in that perpendicular position, but that's now halfway or,
+you know, kind of not in the stretch position.
+It's kind of closer to the mid range of the movement.
+So you're moving the point of, you know, a peak effort in the excise range of motion to a more mid
+range position, which is further away from the position where you're trying to spark your long head
+and your sort of coastal pecs have the best leverage.
+You're moving it to a position where the lats are going to be more involved.
+So you know, because essentially it's it's it's kind of what you're really doing is a lot pull down.
+But upside down.
+Wow, straight arm, straight arm, pull down.
+I guess not, not a lot pull down.
+Does the fact that they did bent arm change anything?
+Because they always is so clear about it has to be bent?
+Not always, but you know often has to be bent arm don't have your your arms straight.
+Well, you would imagine that bending the elbow would change the relative leverage of the trisects
+brachy long head, and there's no data to my knowledge on on exactly what that is, but I would
+imagine that given the behaviour of the long head, it probably reduces its leverage.
+So the bent arm probably does start to shift things away from the trisects brachy long head and onto
+the coastal PEC.
+So I would imagine.
+If he was allowed so.
+Well, only in relative terms, because if you've got, say, two or three muscles working at a joint
+and you start disadvantaging one of them, then you automatically advantage the other one, even if
+it's not doing anything.
+This is one of the things that people get confused about.
+They go, well, this muscle has, for example, people will talk about the changes in the medial,
+lateral and long head of the triceps brachy in accordance with shoulder range of motion.
+And they go, how is it possible that media and lateral heads change their relative leverages over
+the range of motion when they don't have any connection across the shoulder?
+And it's like, well, they're not changing their leverages.
+It's the long head, it's changing its leverage and that's changing the relative leverages of the
+media and lateral heads.
+Now you could get the same thing happening here.
+So you know, bending the elbow and obviously the Peck and the lat across the elbow, but the trisecta
+Becky long head does.
+So if you change the leverage of the trisecta Becky long head at the shoulder by changing its
+length, which is well known to change the leverage of a muscle, then you could change the relative
+leverages of the Peck and the lat at the shoulder for shoulder extension.
+So what I would imagine is that if you wanted to construct A and I'm just going off the basis of,
+you know what, what, what these guys are doing at the moment.
+But I would imagine that a horizontal position pullover with a bent arm probably probably has more
+coastal PEC involvement than any other variation.
+So that would be my guess based on what they're doing and also based on, you know, kind of what I've
+seen of the trash sparky long head behavior and other two joint muscle behaviors.
+But as I say repeat myself, I don't think there is any data showing how the long head changes its
+shoulder extension leverage with elbow position changing so.
+It's interesting how limited some of the data actually is.
+Like you think that's a relatively like, I don't know, straightforward thing to have information on?
+Well, I don't think it's very easy to do momentum calculations like that.
+You would probably want to do sort of a separate kind of.
+You could probably do it using a similar method to the London studies by using electrical
+stimulation to measure the torque angle curves.
+You probably do it like that, I would say.
+But again, you know, does your dynamometer to let you do that easily?
+It depends.
+I mean, I don't know.
+But yeah, I think that's that's a really interesting one.
+I'm thinking that that would be a really cool sort of investigation to do to see how the the long
+head of the triceps changes its behaviour in shorter extension according to what your your elbow
+position is.
+Now, incidentally, you could do exactly the same thing for, you know, looking, I mean, you could do
+exactly the same thing for the rec fam.
+So we talk.
+I mean, obviously it was that study a while back where people did sort of knee extension training
+either with a standard seated position or with a horizontal reclining position.
+And everyone was running around talking about stretch mediator hypertrophy.
+But the interesting thing is, is, did direct fem change its knee extension leverage as a result of
+being put in a stretch position Now, because the muscles change their shape when you, you know, kind
+of elongate them or, you know, kind of move them into a more shortened position by changing, you
+know, sorry, 2 joint muscles change there leverages and shape because, you know, you're, you're
+changing the, the length of the muscle.
+You know, it should actually change its relative leverage to the, to the three single joint
+quadriceps.
+You know, nobody talks about that because they're not really bringing neuromechanical matching,
+which is the prevailing model of how the brain controls the muscles in the body.
+They're not bringing that into, you know, hypertrophy science, which is a bit of a shame.
+But you know, that would be my first kind of question is like, does changing the length of the
+muscle have that effect?
+Because I think it it clearly does in the case of the hamstrings when we've got data showing that
+that does happen.
+And I think we've got indirect data suggesting it happens with the elbow flexors as well.
+And I'm just kind of thinking to myself, well, does it therefore happen with the tries to specky
+long head?
+Does it happen with the with with direct fam?
+I mean, those will be really interesting studies to to do.
+Now I took it on a different path.
+You wanted to talk about squats.
+Let's jump back to this 20 Rep squat method.
+Yeah.
+So the, the interesting thing about the 20 Rep squat is, I mean, and there's, there's kind of
+comments here about, you know, practicalities as always.
+You know, there's this interesting point about squats where we're kind of saying, you know, we're
+using a lighter load perhaps than we would ideally want to simply because of logistics.
+You just can't get the, you know, the weight in place and all the rest of it.
+But you know, just looking at it physiologically, one of the difficult things or one of the
+challenges with exercises that have a lot of muscle mass like squats, deadlift, is that you have a
+large cardiovascular response and the cardiovascular response and then starts to reduce your ability
+to recruit high threshold motion.
+It's because it's a sensation and that reduces your maximum central motor command at the point of
+maximum effort.
+Now, obviously introducing breaths between repetitions starts to deal with some of that
+cardiovascular sensation.
+So that's, you know, straight away, you know, you're looking at the rationale for doing this is
+that, well, we're reducing cardiovascular sensations.
+We're potentially going to increase the the level of improvement that we can achieve.
+So, you know, that's, that's cool.
+But also secondarily, we're going to end up doing more total repetitions than we would do if we had
+not taken those breaths because we're introducing a period of time in which fatigue is able to
+dissipate.
+Now that's really what I was hoping to talk about today in the physiological section of this
+podcast, because you know, when you look at clusters as, as this, what is the what this is, it's a
+cluster set essentially.
+And you're training, you know, perhaps in the context of bodybuilding still to failure.
+Then what's happening is you're ending up doing more repetitions.
+What are you doing more stimulating repetitions?
+The answer to that question is we don't know.
+So a little digression.
+Let me just kind of fill in some gaps for people who are coming to this kind of concept for the
+first time.
+When you're thinking about cluster set training and you're looking at the literature and you're
+listening to people talking about cluster set training.
+A lot of people talking about cluster set training on the Internet will just start throwing studies
+at you saying, oh, this study shows this and that study shows that.
+And, and they'll start making all these kind of inferences and claims and, and building a case for
+whatever it is they want to build a case for.
+You've got to look at the studies and you've got to apply physiological frameworks to those studies
+and think about what's actually happening.
+So as we were talking about before we jumped on the podcast today, Retty much to my knowledge, the
+vast majority of cluster strength training studies have used moderate loads and not all of them have
+paired the training groups by, you know, kind of both groups training to failure.
+So what you might have is 11 group training to failure with say 10 Rep Max's, three sets of 10 Rep
+Max, something like that.
+And the other group will train with say the same kind of Rep Max and they'll still do 10
+repetitions, but they might have some rests in between them.
+So they end up training further from failure.
+Now you can still use that study if you're interested in stimulating Rep theory because you can go,
+well, this group is doing fewer stimulating reps than that group.
+OK, Well, you'd expect if the difference is big enough, and it may not always be big enough to
+detect an effect, but if the difference is in the number of stimulating reps is big enough, then you
+would expect your cluster set to produce slightly less hypertrophy then you're, you know, kind of
+standard set to failure.
+Now, I'll repeat myself.
+If the difference in stimulating reps per workout is not big enough, you won't see an effect in the
+same way that if you're comparing different volumes and your volume differences are not big enough,
+you won't see an effect.
+And that's ultimately why most training to failure versus not to failure studies where the
+differences are small, like one or two reps per set, you don't really see much of a difference.
+It's not because there is the difference is because it's just too small to detect.
+So straight away now you've got to look and say, am I training with my two different groups to
+failure?
+If on the other hand, you find a study where you've actually trained to failure in both situations,
+then now you can start to say, OK, my cluster set group is now doing more repetitions.
+Maybe you're getting 12 reps out with A10 Rep Max, something like that, depending on how many reps
+you know, kind of period you've taken in, in Intracet.
+Now you can start to answer the question of maybe am I seeing more stimulating rates being done
+because of these intra intra set rest periods that I'm taking?
+Is this hanging together so far?
+Cool.
+Now the thing that I think is, is really interesting about cluster set structures is to say, well,
+what happens if I'm using a moderate load, light load or heavy load?
+And I think really this is where we're missing an enormous opportunity when it comes to strength
+training research and strength training science.
+Is because almost all of the cluster set studies that are done again are done using moderate loads.
+Well, the problem with moderate loads in the context of stimulating Rep theory is that all the reps
+you do before you get to your stimulating Rep zone are not really doing anything.
+So you do your repetitions and you're just accumulating metabolite relative fatigue.
+And if you're unlucky, you're accumulating other types of fatigue as well, which is suppressing
+either recruitment or a mechanical tension.
+But of course the metabolite stuff is what you're chasing and you you collect that and then when you
+get to a certain level, you enter into the stimulating Rep zone.
+Well, in that scenario, if you're comparing say a cluster program and a non cluster program and
+they're using 10 Rep maxes, then what's going to happen is you're just going to end up in the same
+place really more or less because you get into the stimulating Rep zone.
+And then it's only really those last reps that matter.
+And maybe you could string that out a little bit with your clusters at that point by taking rest
+periods between sets.
+Ultimately, you know, it's not really going to be be a massive effect.
+On the other hand, if you're using a heavy load, let's say you're using a fiber Max and you do
+clusters with a fiber Max.
+Now that's really interesting because you're essentially getting a stimulating Rep from your very
+first repetition and your cluster then allows you to do say 6 or 7 repetitions.
+Now we're saying, OK, I did a fiber Max here, you know, all the way through, and then I did A5 Rep
+Max here, but I did 7 reps with that because I had these intra set rest periods.
+Now I've got 7 stimulating reps here on paper and five over here.
+Nobody's ever done that study, you know, and that would be really, really fascinating.
+Would it be big enough?
+Or you might have to do multiple sets, you might have to do a longer period of time to see those
+kind of tiny differences.
+But I think you would start to get to the point where you can maybe construct a study that would
+tell you the answer to, you know, am I getting more stimulating reps by doing those extra
+repetitions?
+And that's what I was saying when I started this little kind of explanation, is that we don't
+actually know.
+I don't think anybody knows whether that extra 2 repetitions in that context would generate more
+hyper.
+Are they genuinely stimulating or is there some fatiguing effect that is creating a suppression of
+that stimulus?
+Now my gut feel is that there isn't.
+My gut feel is that you probably genuinely are getting extra stimulus because I can't really see
+that fatigue mechanisms would create a problem for you in that scenario because the heavy load means
+that it's just metabolites really.
+And all you're doing by putting those rest periods in between repetitions is allowing a bit of
+metabolite clearance and then you drop back again.
+And then so you're basically just kind of going up in terms of fatigue accumulation, then drop down
+a little bit and then up in terms of fatigue accumulation, then drop down a little bit and you're
+just working your way through to failure.
+And it takes a little bit longer than it would do if you were doing a straight set all the way
+through a fatigue metabolite accumulation, which is going all the way through to the top.
+I don't see that that allows same more calcium and accumulation particularly or more, you know,
+super spinal spinal CNS fatigues.
+Again, spinal CNS fatigue is being completely eradicated.
+Wow, that's a bit of a strong statement.
+Is, is absolutely being managed by those intra repetition, sorry, inter repetition arrest periods.
+So ostensibly it looks better to me than a straight set in that respect.
+So I think even if there were a little bit of a disadvantage in terms of calcium ions or a
+disadvantage in terms of super spinal, I can't see that happening.
+I think again, that would be better rather than worse because you've got time to recover from the
+sensations.
+I, I, I think that the advantage in terms of spinal probably outweigh any disadvantages.
+So looking at it and again, hopefully people are getting the the vibe here that I am thinking this
+through.
+I'm not saying here is my opinion and then here's a bunch of justifications for it.
+I'm just kind of talking this through and say this is what I am seeing when I think about the
+fatigue kind of mechanisms that are ongoing in this situation.
+And what I'm seeing suggests to me that very possibly we're actually getting the benefit, the full
+benefit of all of those stimulating reps when we are using a heavy load to do clusters in that
+situation.
+And I think for that reason, it makes it a very interesting kind of concept, especially if you're
+looking to volumize a particular exercise or, you know, kind of for a muscle group or something like
+that.
+So, you know, often in the past when we talked about volumizing something, we've talked about using
+maybe contract positions where possible, using heavier loads, leaving reps in reserve, those kind of
+ideas.
+I think clusters probably fits into that bracket of, you know, ideas for, you know, if you just want
+to throw a little bit more volume at a particular muscle group for whatever reason and those would
+be an interest that we've implemented.
+Last week we spoke about, I figure how it came out, but we were talking similar to your comment a
+moment ago where you said you're not just trying to justify your kind of endpoint opinion.
+And we're talking about if you start with this physiological model, it kind of opens up
+opportunities or it sort of, you know, creates sort of these, you know, boundary conditions and you
+can kind of push right up against them and see how things can kind of play out.
+And in the conversations we've had over the last few years, classes has been one of those methods
+for me that has come out where just talk talking about the Physiology, I've realized, hang on, this
+is a method that really has a lot of legs and it's something I can play with and something I can
+actually utilize.
+And there's not a lot of those kind of advanced methods that people talk about that sort of fit that
+bill.
+But classes certainly was one.
+And we'll talk a little bit more about some practical ways to use them.
+But I just want to touch on some of the things you said in case people didn't follow.
+So you mentioned those lighter Rep load classes and you mentioned say you're doing like a 10 Rep Max
+load and you might get 12 repetitions with it.
+And you sort of made this point that you, you might be getting maybe the same amount of stimulating
+reps.
+And I'm assuming most people listening to this will be aware of the stimulating reps models we
+hopefully need to go down that path.
+But essentially what you're saying, there's those first in, in a straight set of of 10, those first
+five repetitions.
+Essentially the purpose of those is to accumulate enough fatigue that you get to stimulating reps.
+And by having those little clusters, those little rest periods in between, you're just slowing down
+the accumulation of that fatigue essentially until you get to the stimulating repetitions.
+So it might not be that repetition 6 is now maximally stimulating.
+It might be repetition 8 is maximally stimulating, just kind of delayed it.
+So the point you made is, hey, that set of 12, it's probably about the same.
+And, and that makes sense.
+And then you've touched on, well, if we assume that at about give or take a 5 repetition Max, we've
+got sort of maximal voluntary activation occurring.
+And and that's kind of the point where we're seeing the simulating reps sort of take effect.
+Well, what happens if someone's using A5 repetition Max for those clusters?
+So if we go back to Reg with these squats mention right at the start that a lot of the time the way
+people use these is they'll do sort of that, you know, 10 repetition Max load.
+But the way Reg has expanded here by using a load that you're actually taking multiple press each
+repetition from the get go, I'm not sure what that load would be to in my mind, I'm thinking that's
+probably like a six or seven Rep Max would be my guess.
+So he hasn't potentially quite hit on that five repetition Max, which I've experimented with with
+classes with, you know, 5 Rep Max squad and with a squad.
+It is pretty uncomfortable to do classes with A5 Rep Max.
+And I can kind of understand why my one might actually go a slightly lighter load for that purpose.
+But the point you've made is.
+It's absolutely a it's absolutely a logistical issue with the squats because if you were to do it
+with leg presses where you can actually lock out at the end of each, you know, kind of deload the
+end of each repetition because the equipment allows you to take, you know, kind of, in fact, if you
+wanted to, you could just literally take your foot off the plate.
+I mean, depends on the leg press is set up.
+Not every leg press lets you do that.
+But, you know, if you can completely deload between repetitions, then the IT becomes a completely
+different animal.
+I think the issue with the squat is that you're standing there with this weight crushing you the
+whole time.
+And that just makes life miserable.
+Yeah.
+But when you look at it in the context of say like a totally different exercise where it is possible
+to take that loading off the body in between reps, then I suddenly think 5 Rep Max cost has become
+doable.
+Exactly.
+Yeah, exactly.
+And if someone gives us a go with a squat, what you'll notice is with any other exercise basically
+where there's not a Barney back, the longer the interest set, rest period, the easier it becomes.
+With a squat, it actually has this sort of paradox where you might take a few breaths and it makes
+it easier, but then you stand there for too long and it makes it harder.
+You're just getting crushed.
+So it's almost this mental game of like, how many can I take and let some of this, you know, the
+respiratory kind of, you know, higher heart rate, higher breathing, right?
+How long can I let that dissipate for until it actually is now working against me.
+Whereas you do another exercise.
+So I do these on a hack squad or I do these on a pendulum squad and that's much easier.
+You can kind of lock out, you're not kind of having gravity crushing you in half as a completely
+different sensation to a barbell squad.
+So these these sort of set of you know, 5 Rep Max clusters, you mentioned you can't, you can't see
+any reasons if we're looking at the fatigue mechanisms as to why they wouldn't allow one to to
+achieve more stimulating repetitions.
+Now you sort of touch them in a little bit.
+But if you look at, so you mentioned calcium, ionic type fatigue, related fatigue and you mentioned
+superspinal and spinal.
+You would think certainly spinal and superspinal that a cluster should actually be less, it should
+produce less spinal and superspinal fatigue than a street set because you've got that little grace
+period.
+They're letting both of those dissipate calcium on related fatigue.
+You would argue maybe marginally more just by virtue of doing more repetitions.
+Yeah.
+So before I answer that question, let me just come back to something that you mentioned 2-3 minutes
+ago, which is where we talked about how well you explained how the stimulating Rep model basically
+requires fatigue to be accumulating in the first few reps of a moderate load set so that you get to
+a point where you're doing stimulating repetitions in the back half of a moderate load set.
+So that's you, you're doing a say A10 Rep Max.
+Your first five reps are just accumulating metabolite related fatigue.
+What I want to do is just help people square the circle here because on the one hand, we're saying
+fatigue needs to accumulate to get to the stimulating Rep zone.
+On the other hand, we're saying that fatigue mechanisms can reduce the stimulus you're experiencing.
+So some people kind of get really, really, you know, kind of confused by this.
+And they go, how is it that fatigue is a good thing for stimulating reps, but it's also a bad thing
+for stimulating reps?
+Well, it's because fatigue isn't a single thing.
+What we're talking about here is fatigue mechanisms.
+So strictly speaking, stimulating.
+That model says that it's the metabolite related to fatigue that's building that aids you in getting
+to a point where you can produce high levels of mechanical tension and high levels of motion accrued
+at the same time at the end of a set.
+Any other fatigue mechanism is negative.
+That's it.
+It's that simple.
+So if you've got 4 main fatigue mechanism categories, you've got superspinal synthetic spinal,
+synthetic metabolite related fatigue, and calcium I'm related fatigue and they're all kind of groups
+of mechanisms now.
+Essentially the metabolite related fatigue is the only one that's innocuous.
+That's the one that helps us get to the point where we're stimulating the hypertrophy that we're
+looking for.
+Anything else is either going to reduce recruitment in the case of the spine, spinal and superspinal
+CNS fatigues or it's going to reduce mechanical tension in the case of the calcium amount of fatigue
+mechanisms.
+So that's the background.
+So as you rightly point out, we've then got to analyze each of these fatigue mechanisms when we're
+looking at cluster and say, well, you know, what's happening now, again, when we look at the cluster
+situation, spinal is absolutely going to be less because it literally just depends on the total
+duration of that's elapsed without taking a break off the muscle.
+So if you're like an isometric holding that for long periods of time, you're just getting spinal
+CNFT just going crazy.
+I mean, that's, that's what we want to try and avoid.
+And that's why whenever we talk about isometrics, you've got to break them up to make it work
+properly.
+Dynamics, you do get a break because of the eccentric phases between repetitions.
+But again, you're still getting some of it there because you're still not taking complete
+deactivating, still with the brakes that you get with clusters.
+That's fantastic.
+And we're now starting to see spinal CNFT probably be pretty minimal, and that's really, really good
+outcome.
+As you pointed out, superspinal.
+Well, there's a bit of interplay here and it depends on the logistics of the exercise.
+But yeah, if you've got the ability to just take all kind of activation off the muscle and not have
+any kind of feelings in that space of time between reps, then really superspinal is going to be very
+low as well because you're just taking all the sensation out of the equation most and the.
+Very least with superspinal it's going to kick in obviously the tail end of that set.
+So at that point you should have achieved as many stimulating reps you would have got with this
+straight set, and now you're still getting those extra bonus ones and that's where the superspinal
+fatigue is going to be present.
+Yeah.
+But I would always just say to people, you know, kind of be aware of it because you know, like we
+were describing with the squat situation, the fact that you've got this bar on your back just kind
+of creates this miserable sensation.
+So just be aware that supraspinal CNST is roduced by negative feelings and sensations.
+So if in the particular instance, like, because I can guarantee that somebody will say to me, well,
+I don't agree with you because you know, I do clusters and I feel miserable and what would they go?
+That's the answer.
+It's like, you know, it's like, doesn't matter how the theory pans out.
+If I can say to you, you know, just just be aware of how you're feeling and if if you're feeling a
+really strong sensation of discomfort because of some reason, then that's telling you you've got
+superspinal CNFT present.
+So don't overthink it.
+But in theory it shouldn't be too bad because you are allowing these things to dissipate between
+repetitions and therefore, yeah, it should be better.
+So as you just mentioned, obviously spinal fatigue gonna be less.
+Yeah.
+So we need to look at superspinal.
+We need to look at calcium, which you're going to talk about in a second.
+Now, from a superspinal standpoint, I always tell my clients when we're doing clusters, be really
+aware of how you set up this exercise.
+So I'm going to be careful with which exercises I'm telling someone to do with classes.
+I want it to be an exercise like if you've got a squat cage and you can only set it up where you
+know, you can't easily put the, the barbell back the hook, so it's hard to do a lift off or you
+know, whatever that exercise is, it's actually a lot of effort for you to do the class to do the
+repetitions.
+You have to hold the weight.
+It's fatiguing.
+That is actually going to work against you from super spinal CNS fatigue standpoint, right?
+So from a setup standpoint, anytime you pick an exercise for clusters, how can we modify this setup
+so it's reducing super spinal scene as fatigue?
+And then we can do the same with calcium ion fatigue in some ways, but I'll let you talk about it
+first.
+Before I jump into that, let me just kind of expand on something you just said, which is that, you
+know, we're trying to reduce all of these elements of discomfort.
+We're trying to get rid of this complication of re racking the bar and, you know, kind of any,
+anything annoying, frustrating, you know, kind of anything like that we're trying to get rid of.
+Sometimes when I talk about that stuff and we talk about that stuff and other people, you know, kind
+of address those kind of ideas in the context of bodybuilding, you know, the rebuttal, the pushback
+that we get from other areas of the industry is like, you know, just to suck it up and do the
+difficult thing, right?
+OK, now just let me work through that because what they are not understanding is that we are sucking
+it up.
+We are doing the difficult thing, but what we're doing is we're directing all of our energy to doing
+the difficult thing, which is purely producing motor unit agreement rather than, you know, allowing
+some of our energy to be siphoned off and used to deal with this difficult thing instead.
+That's all it is.
+So it's like which difficult thing do you want to use all of your energy to withstanding producing
+motor unit agreement, the central magic command, or dealing with all this other rubbish that you
+know is extraneous and doesn't actually help us produce motor unit agreement.
+Because ultimately you've got a maximum tolerable perception of effort.
+You can either devote all of it to producing motor unit equipment or you can devote a portion of it
+to sucking it up and dealing with these aggravations and the rest of it to motor unit equipment.
+Pick one.
+That's it.
+I mean, and so when people what people don't understand when they push back and go, you know, kind
+of just deal with it and do the difficult thing like, well, yeah, we are.
+It's just that we're limiting the difficult thing to the thing that actually produces an effect
+rather than, you know, all this other extraneous rubbish that you're dealing with because you think
+it makes you, you know, I don't know, self-image, whatever self-image you've got of yourself, that
+means that you do difficult things.
+OK, fine.
+But the point is that it's a choice of where you devote that effort rather than, you know, kind of
+whether you are in fact in the effort one's, you know, training hard.
+Yeah, in both scenarios where reaching A maximal probable perception of benefit.
+It's just just how you get there.
+Are you devoting all of it to recruitment, which is getting you the result you want?
+Or are you devoting part of it to these other extraneous things because that makes you feel good
+about it yourself?
+Yeah, it isn't.
+It is certainly an odd argument.
+I agree with you.
+Well, it's, it just fundamentally misunderstands what's happening.
+You know, I think a lot of people say you're not training hard because you're not dealing with these
+issues and like one of those issues don't get you where you want to go.
+I think it's because you can externally see that, that effort, right?
+So if you're doing, if you're huffing and puffing and doing dirty repetitions and drop sets and
+whatever else and you're, you know, sweating.
+Battling to battling to rewrite the barbed.
+Yeah, exactly.
+It's like, oh, I can everyone can see that effort.
+So it's.
+Performative.
+It's.
+Performance.
+Exactly.
+Exactly, but demonstrating.
+It's signaling something which is.
+It's a.
+Signal.
+That's it, Yes.
+That's terrible.
+That's really terrible.
+That's that's, that's, that's, that's, yeah.
+I'm not sure what the terminology is, but it's the opposite of of virtue as far as the Stoics would
+be concerned.
+You know, it's not inherently valuable.
+It's just showing other people that you're doing something, which is, yeah, not not good.
+But yeah, So no, the, the, the point I just wanted to address before I can move on to calcium ion
+relativity is just to say that, you know, struggling with stuff that doesn't get you close to high
+levels of recruitment is not inherently valuable, at least as far as hypertrophy is concerned.
+I mean, it doesn't, it doesn't get you close to the goal.
+Cool.
+So in terms of calcium ion relativity, this is this is a little bit of a tricky 1.
+So let me just walk through what I see when I think about this.
+Before I talk about clusters, let me just talk about calcium ion versus metabolite related fatigue
+more generally.
+In general terms, when we're looking at the strength training set, broadly speaking, if you increase
+metabolite related fatigue for whatever reason or by whatever mechanism, you tend to decrease the
+amount of calcium.
+I'm relative fatigue at TUS failure.
+Let me give an example.
+So if you're doing a strength training set and maybe there's just one kind of muscle group working
+imaginary kind of situation here for a moment and you start changing the resistance profile.
+So you've either got contracted position or stretch position.
+So you might say, well, let's do you know, kind of lying leg curls, something like that.
+And let's have a machine that allows us to change the the point of peak resistance.
+So you kind of move it from stretched to contracted.
+What you're going to find is that the OR even back extensions like we were talking about earlier,
+you know, back extension is really a nice example because you've pretty much got the same leverages
+for all three, two joint hamstrings muscles across the whole range of motion.
+So you could like have either bands or no bands and you could have maybe some kind of resistance
+that allows you to change or dynamometer and you can move resistance to point to peak effort to
+stretch position or the contractor position.
+And we're like, well, OK, so do we then start to see a difference in terms of fatigue accumulation?
+Well, we do because as you have a stretch position, that kind of exercise, you'll get more calcium
+amino fatigue, but as a result, you'll get less metabolite related fatigue.
+The two things tend to kind of be like you, you kind of one or the other.
+And because you're getting to the same kind of level of muscle force or kind of getting to the same
+level of capacity to produce.
+Do the exercise, but ultimately buy one mechanism or the other locally now.
+So essentially we've got this this balance.
+Now you can do the same thing with say tempo.
+If you were to do Max effort repetitions from the first repetition, you're going to get more
+metabolite related T than you are calcium I related T.
+If you go more slowly, you'll get the opposite way around.
+You'll get more calcium I related T and less and less metabolite related T because from the first
+Rep if you go Max out, you're going to have fast switch fiber activation from Rep one.
+You don't get that if you kind of view a self selected or slow tempo.
+So in any scenario where you're thinking about strength training sets to failure, pushing 1 variable
+in One Direction tends to either increase metabolite or calcium.
+I related T proportionally to the other one.
+Now the question is, does that happen with cluster sets?
+And I'm not sure because I suspect it probably does.
+I suspect that you probably do get a little bit more calcium.
+I'm related to T because when you look at reps over time as you do a repetition and let's say you do
+a repetition and let's say you're doing 10 Rep Max and you do it all the way through to failure with
+no clusters.
+So you just go bang all the way through.
+What's going to happen is metabolites are going to accumulate and yeah, there's going to be some
+calcium accumulation at the same time.
+And you get to the end of the set.
+And the rates of accumulation have been kind of constant for both types of fatigue mechanism or
+groups of fatigue mechanisms rather.
+So you end up with muscular failure and you kind of measure the relative amounts.
+When you say constant, do you do you mean linear as well or?
+Well it's not.
+They're not linear linear because calcium marmotic tends to be very non linear.
+It tends to kind of zoom up at the end of the set.
+Which I imagine would be important in this context.
+Yes, and metabolite related fatigue is non linear in the opposite direction.
+It tends to jump up at the beginning and then starts to take tail off towards the end.
+If you're doing if you're doing reps with rests between them or some kind of intraset rest period
+structure, what's going to happen is that you're going to have a period of time in which your two
+accumulating lines have a chance to go back down again before they accumulate again.
+And the difference here is that metabolites will drop precipitously as soon as you give them a
+chance to dissipate.
+Calcium mines do not.
+So you have a very different kind of recovery profile.
+So your metabolites are going to go up and then drop and then up and then drop and then up and then
+drop.
+Your calcium mines are going to go up and drop a little bit depending on what's capable of happening
+in that scenario.
+And there's not a massive amount of data.
+But the thing about calcium mines is that once they're there and they're producing their their
+calcium mechanisms, those fatigue mechanisms can't be unpicked until much, much later on.
+They take hours or even days to completely deal with them.
+Yes, the calcium themselves will dissipate, but the effects of those will not dissipate, if that
+makes sense.
+So metabolite relative T mechanisms only exist when metabolites are present.
+It's like the presence of the metabolites produces the effect.
+That's not true about calcium.
+Calcium ions come in and they precipitate a set of mechanisms and those mechanisms are now
+independent of the presence of the calcium ions.
+They're like, it's like dropping a kind of a weight off a Cliff.
+Once you've dropped it, you can't influence the fact that it's now dropped.
+That's what happens with calcium.
+I related to tablets are not like that.
+If they're present, they're creating the effects.
+Like, you know, clouds produce rain.
+Once you take clouds away, there's no rain.
+So it's like the fundamentally different kind of approaches to creating the problem.
+So what I think we'd see with clusters is you would actually get a little bit more calcium.
+I related to accumulating simply because because you can't get rid of it really once you've kind of
+started creating the problem.
+But as you point out, mitigating that is that these calcium amylated feeding mechanisms tend to
+really only become very noticeable in the last couple of reps of a set anyway.
+So you're not really got a chance of producing a large impact of calcium amylated T until you get
+towards the back end of the workout.
+And that's why clusters are so much less problematic for calcium amylated T than something like drop
+sets, you know, because of course, when we're talking about clusters, people will be saying, Oh
+yeah, OK, well, cluster sounds exciting, but what about drop sets?
+Well, what about rest pause and all these kind of other ideas that are, you know, kind of similar?
+Well, with drop sets, when you're trained to failure and then immediately banging out another couple
+of reps and then immediately banging out another couple of reps, that's calciumine related fatigue
+heaven.
+Really.
+That's right.
+I mean, they're running, running around having a party at that point.
+I mean, that's, that's really going to create issues because you are in that zone where you've taken
+all the way to failure.
+You've you've got to the sort of the steep end of the graph with calcium and accumulation and
+calcium and fatigue mechanisms.
+And then you're doing it again and then you're doing it again.
+As I will know, that's not what we want.
+That's that's a really bad idea.
+So just in terms of clusters, I would say on balance, I think you probably are going to get a little
+bit more calcium.
+I relate fatigue with the cluster, but I don't think it's going to be a lot more and I don't think
+it's going to be problematic.
+And I think so on balance, if you look at all of the T mechanisms, I would say that because of this,
+the the reduced spinal, reduced super spinal, slightly greater calcium, I rate D overall.
+I would say that's a positive impact and that's why I think we're probably going to end up getting
+an extra couple of stimulating reps from a doing clusters compared to a straight set.
+And like you mentioned, the calcium ioculations exponential at the end of that set.
+So with that cluster set, even if you are using A5 Rep Max, then you're still like you would let's
+say you get 8 repetitions out with that five repetition Max.
+Well, because of fatigue has dissipated, you know, you've got whatever we'll talk about actually how
+long one might do between reps and stuff.
+But presumably, let's say in a normal straight set, obviously with A5 Rep Max cars and minor
+accumulation is going to be less of an issue than, you know, 10 Rep Max or whatever.
+But let's say the, the real, I don't want to say damaging, but the, the real impactful repetitions
+in a straight set might be the last, what 2 repetitions would you say from a calcium on?
+Yeah, give or take.
+And so with that, that cluster, what we might be getting maybe a third like just because by virtue
+of extending out essentially that stimulating kind of period.
+So it feels to me like, well, that's kind of sort of the tricep admission.
+If you're going to get more stimulating repetitions, you're kind of going to get more calcium on
+accumulation.
+It's it's kind of proportional to what you're expecting if you were to do another set.
+I mean it's like, you know, you've done another half set and you've got another repetition worth of
+calcium and accumulations.
+Yeah, as you say, it's the price of admission.
+So and and of course, if you wished you could just not, you could just not do that last couple or so
+and you could just volumize as if you were leaving reps in reserve, you know, and that that then
+just brings you to kind of programming issues around saying, well, OK, but how do I make clusters
+work for me?
+You know, can I see progressive overload and those kind of questions?
+And it becomes more of a practical consideration, which I think, you know, again, there's ways
+around that.
+But ultimately in terms of sort of what we're expecting to see just in terms of stimulating
+repetitions, if you're using heavy loads and you're getting an extra couple of reps in the cluster
+set compared to what you would get in a straight set, I think that probably are stimulating.
+I mentioned a moment ago, So I would always look at ways we can mitigate some of these negative
+forms of fatigue, you know, in a cluster set.
+And if we're looking at calcium on fatigue mechanisms, then probably the most important part from
+the reference reserve which you mentioned would be exercise selection.
+And so if I'm programming clusters, I'm not going to program an exercise where ideally not where
+there's a huge kind of stretch component of that exercise, and especially not one where between
+repetitions are left in a stretched position.
+O for example, one exercise that I hate doing clusters on and I never program it would be something
+like a seated Lego unless one had a machine where they could very easily take their legs out of that
+machine.
+Otherwise you're stuck in this essentially lengthened position, this stretch between each
+repetition.
+And that's going to, that's going to be your worst nightmare from a calcium on accumulation
+standpoint.
+So, and it's actually relevant to what we were talking.
+About last very just, I was going to say you're actually connecting this to what we described last
+time where people are pausing in a stretch position, put in a relax state, but in a relaxed state.
+It's like you're relaxing into that stretched position between repetitions.
+You're basically doing a static stretch between each repetition of your strength training set, which
+makes absolutely no sense because you you could just do the static stretch afterwards and get all
+the benefits, all of the benefits, if not more of the benefits, and not interfere with the strength
+training set that you're doing.
+It was such a strange thing to talk about because people are literally arguing that you could do
+these static stretches between repetitions and and claiming that that was helpful.
+I'm like, let's just do it afterwards.
+Makes so much more sense.
+I mean, go, go experiment with a seated local cluster and see how that study stretch goes for you.
+You don't find how much your performance drops.
+Now we haven't actually really identified or defined what a cluster actually is, especially when,
+because if you compare it to something like rest pause, obviously drop sets a little bit different.
+We don't really need a contrast to that.
+But a lot of people do get confused between how does a cluster differ from a rest pause?
+And I'm not sure if you've got a different definition to me, but for me when I look at that, and
+again, maybe there might be different definitions out there, but I would say rest pause generally
+will involve that first set taking the failure and then each mini set after it generally taking a
+failure as well.
+So.
+That would be my that would be my instinctive definition, I think.
+But technically really is a.
+If you're thinking Venn diagrams, rest pause really should sit within clusters.
+And it's sort of in the middle ground between a drop set as well, because a drop set effectively is
+rest paused, but you're reducing the load.
+No.
+So this is, this is where I would say this is fundamentally different because when we talk about a
+cluster, the word cluster means that we are grouping repetitions together within a set.
+So what you're saying is that you're, you're putting rest periods somewhere into your set that
+allows you to sort of make the set sort of longer really.
+So with clusters, we've got, OK, we do this number of repetitions, then we take a rest, then we do
+this number of repetitions, we take a rest.
+You can go as far as single repetitions and rest between those repetitions.
+OK, fine, rest pause.
+You do the repetitions to failure and then you take a break and then you do another few repetitions,
+then you take a break and then you do another few repetitions.
+And technically, you could say, well, is that therefore a single set with, you know, kind of rests
+and therefore you've got these three clusters of petitions.
+Now if you wanted to and say, well, no, failure for me represents the end of that set, you could
+say, well, actually, no, it's just three sets with very short rest periods.
+So you could look at this, you could look at rest pause from 2 totally different spectors.
+You could say it's a single set of clusters because you've got 3 clusters, but you are trained to
+failure.
+So arguably it's not one set, it's actually three sets, but with short rest periods.
+And I think you could argue that from two different perspectives.
+And depending on which way you come at it, I think either is probably OK.
+Drop sets are different because you don't have any rest.
+So technically a drop set is not a cluster because it doesn't have separate segments to it.
+It's all one thing all the way through.
+Yeah, that's an interesting idea.
+I guess I would look at a drop set and I would think about it as actually having a bit of a rest.
+Because if you think about, let's say you're doing, what would one do a drop set on?
+Let's say you're doing some of the dumbbells and you do a set of 10 natural raises, whatever, you
+put the dumbbells back.
+See, that's an interesting point with the drop set because I actually intuitively wouldn't have
+thought about that as not having a rest period.
+So the way I've always sort of been conditioned to think about drop sets is from a programming
+standpoint, you need to specify how long you're taking between a drop.
+So you might one might write in 10 seconds, 20 seconds, 30 seconds.
+So in my mind, I'd be thinking of a drop set as 20 seconds, pick the lighter, load, go again.
+So it's interesting OK if there's no.
+To me that would be rest pause but changing the load I mean.
+And that's what I thought in my head, I'm like rest pause is basically a drop set.
+We don't change the load and drops it as we change load so.
+Yeah, terminologies.
+So one of the things that I always emphasize, especially in the mentorship program when I'm trying
+to get people to think about stuff logically and in kind of a segmental and kind of philosophical
+way.
+Sometimes it's a just because we give some words, we apply some words to a thing doesn't mean that
+we've, you know, kind of changed the thing.
+It's like we use words to describe a situation, but those were the map is not the territory.
+The way we describe something is not perfect.
+We're overlapping a template on top of a reality.
+We've always got to be aware that we're doing that.
+My favorite example is anatomy.
+So just because we give a muscle Group A name, we call it the hamstrings, doesn't mean that the
+brain sees that muscle as a single thing or a group as a single thing, you know?
+And so when people say, does this exercise training the hamstrings, does this exercise training the,
+you know, and I'm like, you can't think like that.
+That's not how the brain works with respect to the body.
+You know, and I think the same thing is here is true here.
+Just because we give something a name and we say, oh, this is cluster, this is rest pause, this is
+drop set doesn't mean that, you know, we've we've fully described it.
+It's it's nature and we know exactly what's happening.
+You know, it's like we're just giving words as conventions to try and give a shorthand to what's
+happening.
+Ultimately what's what matters is you know what fatigue mechanisms are occurring and how the rest
+periods that we take and the loading repetition ranges that we manipulate.
+How do those things affect these, the stimulating Rep kind of model?
+Are they changing the recruitment?
+Are they changing the tension?
+And how does that then relate to the overall stimulus of the workout that we're doing?
+So, you know, yeah, we can talk about rest ports and we can talk about drops out and we can talk
+about clusters, and we can change the definitions a little bit here and there and try and understand
+what they all mean.
+But at the end of the day, it just comes back to what is the physiological reality in each of these.
+Situations, Yeah, it's interesting, hey, like basically all these words are, is a tool to help
+locate us somewhere and then when we find where we are, how we can start to talk about, well,
+physiologically what's happening.
+Yeah, they're just, they're shorthands.
+They're not supposed to be like this is better than that, which is better than that.
+It's like no understand what is actually happening because if like we've just found out your concept
+of drop set was slightly different from mine.
+I mean, that's that's that's fine.
+I mean just now we know that that is the case.
+When I say drop set, I always mean that we're not taking a rest between the, the individual drops.
+But you were thinking that there was a bit of a rest.
+I mean practice there always is, but but that then changes how we would then expect the the training
+program to work.
+And the actual specific physiological responses.
+Because you would actually expect a better result from your drop sets than I would because you're
+getting that little bit of a rest to allow some of the spinal and the Super spinal to dissipate.
+So to go back to classes, I think it's important to define and not defined, but gives some
+parameters as to the the rest periods between them, how that might actually look in practice and
+what I guess similar to what you've just said there.
+What I find interesting with classes is it's almost like it's kind of like putting, putting the the
+cart before the horse where it's like we're doing clusters.
+The clusters have to be done with 30 seconds rest and therefore can't do more than 30 seconds rest.
+It's like, well hang on, ultimately all clusters doing is providing some period of time for those
+fatigue mechanisms to dissipate, and the longer the better.
+So really you could do 5 minutes between each repetition if you wanted.
+That 30 seconds is not magic.
+It's really it's a practical thing.
+It's just there so you can essentially get the workout done.
+So it's not that.
+And if you do a 22nd rest between each single repetition and you're still huffing and puffing
+between those singles, to me that's probably not the best way of actually programming that cluster.
+Like, the purpose of the class is to let fatigue dissipate.
+If you've got more time up your sleeve, give yourself more time to let more fatigue dissipate.
+Well, this is exactly the same as the rest period conversation in general terms there.
+And people say to me, how many minutes should I rest between sets?
+And I'm like, well, how long is a piece of string?
+You need to look at this situation and go, am I doing, I don't know, sort of single joint, single
+limb exercises in a machine.
+And I probably actually only need a minute or so, you know, am I doing, you know, squats or
+deadlifts?
+So I might need 5 minutes.
+It's, it's depends on the situation.
+And again, repeating what I've just said before, these concepts like rest periods, these concepts
+like definitions of terminologies, it's all just mapping onto physiological reality.
+You know, if, if as you say, you're doing a set and 22nd rest periods between repetitions or between
+clusters of repetitions isn't getting you a meaningful reduction in the fatigue mechanisms that
+we're trying to reduce, then, as you say, bump it up to 30 seconds and that the purpose is to get
+rid of those.
+And just kind of digress very briefly.
+This is, This is why Physiology matters when you're trying to understand how strength training
+works.
+This is where you can't just go these Physiology people who just focus on mechanisms.
+They need to be kind of, you know, sidelined and told to shut up.
+Well, we're going to focus on evidence based, you know, strength training.
+I'm like, you do evidence based strength training rather than Physiology based modeling and you're
+not going to understand any of this stuff.
+You're literally just going to be like, oh, well, clusters, We don't know what happens with
+clusters.
+You're going to be 1, all these people who sits there going, oh, we don't know what happens.
+I'm like, well, yeah, we do.
+You know, you just have to read the fatigue literature and then understand exactly what's going on
+because ultimately everything you know has a a way of working fatigue is really what is happening
+during these cluster situations or it's being manipulated.
+Fatigue mechanisms are being manipulated while we're up, we're changing these rest period durations
+and changing cluster structures and things like that.
+And if you just work through how those deep mechanisms work, it'll bring you to an answer of what
+you're expecting to see in terms of the effects of different cluster structures.
+And so if you're using a heavy load, just to repeat that key point, if you're using a heavy load,
+fibre at Max load, then you're getting a stimulus from Rep one and you can literally take as much
+rest.
+I mean, like you joked, you know, 5 minutes or whatever between reps if you want to.
+But you know, it's like, you probably don't need to.
+You know, you can, if you try to be efficient in your workout time, then you would take the rest
+period that allows you to, you know, kind of stack up the repetitions that you want to stack up
+without having useless time in your workout where you don't really have any sensations going on and
+you're like just wasting time before you do the next Rep.
+I think there's a, an efficiency thing there.
+Definitely ultimately, you know, if you're getting a stimulus from that one repetition and
+fantastic, then we can just, you know, kind of stroke to the workout in the way we want structure
+it, have 30 seconds, whatever.
+If that works, 20 seconds, if it works, 15 seconds, if it works, it doesn't really matter.
+You know, I think again, people get really hung up on these numbers and like, do I do 10?
+Do I do 15 or 20?
+You know, tell me what the right number is.
+I'm like, well, that's not the right way of thinking about it because your Physiology, your
+tolerance to these team mechanisms is going to be very slightly different to other people's.
+But find the number that is working for you and then just stick with it.
+I mean, we're now starting to getting into practicalities and it's like, well, you know, how do
+people manage this in the context of a strength training program?
+How do they see progressive overload?
+How do they, you know, kind of manage those things?
+You could even argue it might even be exercise dependent, even muscle dependent as well.
+See, sometimes what I do with clients is I say, hey, if we're using A5 GP Max load and be doing
+singles, ideally I wanted to get 8 to 10 singles out.
+And I might say, look, let's start on 20 seconds or 20 to 30, whatever.
+And if you find you're only getting six or seven out with 20 seconds, next workout let's U it to 32.
+What did I say?
+20?
+Let's U it to 30.
+OK, you still only get 7 out.
+OK, let's go to 40, whatever you need.
+Because.
+I think that's a really good approach.
+I think that's a really good approach.
+Start with a target number of repetitions and then figure out what you need in terms of intraset or
+inter repetition rest boots to make that happen.
+I think that's that's really important because that gives a fixed point for people to work towards.
+It's like you can iterate.
+Now you can iterate with your rest period duration until you get to that target.
+And you may find instruction between muscles.
+I find it is.
+So for example, if I was going to do like a biceps cluster, I'd probably need a little bit longer.
+If I'm doing a calf cluster, something like that, I tend to find a little bit shorter.
+So and what I would normally say to clients is what you've identified for that muscle, we're just
+going to keep that now, at least for that phase, we're keeping that.
+But ideally just ongoing you that's probably going to be a good, good sort of dress period for you
+with the calcium iron related fatigue. 1 practical point I wanted to make there.
+If I've got an exercise for that muscle later in that workout, ideally you want to sort of mitigate
+some of the calcium iron related fatigue.
+You talked about direction reserve.
+That's where I would do reaction reserve.
+And So what I would do then is pick a 5 yard Max load.
+I would do singles for me personally, I'll normally do 10 singles, but that's where I'll give myself
+like a good 50 seconds, minute, whatever.
+I feel like a need and I don't want any one of those singles to feel more than like a closer to than
+two reps to failure.
+And so I find if I do that, it really that and you know, I get those 10 singles out, I feel like
+there's very little fatigue that's accumulated and then I'm still able to go do another exercise for
+that muscle and I find my performance isn't jeopardized at all.
+No, that makes sense.
+I mean, I think again, that's just looking at the context of the rest of the workout in which you're
+doing the particular, you know, cluster technique.
+So everything always impacts everything else.
+So the limitations what, what do we need or what is should one be concerned about or where of if if
+they're wanting to use clusters?
+I would say the single biggest limitation is the progressive overload.
+I would say if you're just doing clusters for a particular exercise, you're always going to be a
+little bit uncertain about whether or not you're still using a heavy load because this is the
+problem with clusters.
+If you drift into the moderate load zone, your value of your cluster starts to drop precipitously
+because now you're any repetitions you do at the start of the set, you're just delaying the point to
+which you enter the stimulating Rep zone.
+So a lot of your extra repetitions that you're gathering by doing the cluster technique, you're not
+benefiting from, you know, you really want to be hitting sort of Rep one with a stimulating Rep and
+then suddenly your cluster set start to change.
+And just to reiterate that point, This is why I think the literature doesn't tell us very much about
+clusters because it's all done with moderate, almost all done with moderate loads.
+So you're not really benefiting from the early reps of that cluster set and the extra reps you get
+by doing clusters aren't helping you.
+So I would always kind of, you know, try and program clusters with heavy loads.
+And as a result, you need a way of making sure that you're still using a heavy load when you get
+halfway through your training program.
+And I think that's why we've talked before about maybe with a training program, Maybe if you're
+doing full body AB split, only do clusters for one of those two workouts, not both.
+And maybe have another workout the other workout in the week.
+You do the same exercise, but straight sets or a straight set.
+And you can keep, you know, kind of monitoring your what your five rate Max or at least be able to,
+I mean, if you're not doing actual five rate Max, you might do it like A7 Rep Max or something, but
+have a formula that allows you to just work backwards to that five rate Max and know roughly what to
+do.
+It should be and that won't be perfect, but working within that close proximity, 7:00 to 5:00 or
+8:00 to 5:00, you probably aren't going to be miles away.
+And then you can keep on making sure that you are using a fibre Max in your in your work.
+And I think that was something that you came up with initially.
+And I think it's a brilliant idea.
+I think it makes sure that you're always moving forwards and ensuring that you've got your your your
+appropriate load for your cluster.
+Because repeating what I say is critical that you do use heavy load if you want to make clusters
+work, because moderate load's just going to waste your time.
+I think over the years to how to track progressive overloading clusters has possibly been the topic
+we've talked about, but I don't know if you remember this or realized this.
+Yeah, yeah, there might be one of the other topics we've talked about more, but I like even four
+years ago, whenever we started talking, I remember the first plan I draw to you was a cluster plan.
+And you may not remember this, but it was a full body plan.
+And the way I looked at doing it was doing essentially a circuit and doing 8 sets of classes for
+each exercise.
+And I remember at that point you like, oh, but how do you track progressive overload?
+Over the years I've changed the way I track progressive overload with clusters multiple times.
+And there's, there's multiple different methods I use.
+And at that point in time, what I was using was each phase, what I would do is I would, I would
+start the phase with a testing the five year Max and then I would conclude that phase by testing the
+five year Max.
+And we're using that same load actually that they'd started and then taking that the failure and,
+and tracking how much has the five year Max progressed.
+And even if there were some drifting away that had happened over those few weeks, they're still
+getting at least a set worth of stimulating repetitions.
+But you know, that's relying on, you know, you've got a month of however many weeks between these
+testing periods.
+And I think ideally, what maybe we've settled on over time is having some way that you can anchor
+that cluster to a true 5 Rep Max in a shortage duration, not waiting till the next phase or the end
+of the phase or a few weeks or whatever.
+And so as you've identified there, one option that I really like doing is having an AB and one on
+the A, you might be doing clusters.
+And on the B, you're doing that same exercise, B, you're doing it for maybe a single set of five or
+two sets of five or whatever.
+And normally I'll do a single set of five because actually I find if someone's doing a single set,
+they tend to actually lift a heavier load than if they're doing 2 sets.
+So normally what I would do is a single set of five.
+And I'd say, hey, next time you do clusters, you're just going to use the same load using that
+workout.
+I don't care if it's high or low, whatever you did, but you're just going to use that same load.
+And I find that works quite well.
+And another method I've used is changing the cluster over each successive workout.
+So I start, for example, with a set of five, OK, that's our anchor point.
+And then next workout, we might do five sets of two with that load.
+And then the next workout, we may actually now do triples, maybe four sets of three.
+And the next workout we might do three sets of four.
+And the next workout we'll do one set of five again.
+And so even if there is a bit of drifting up in terms of strength adaption, by adding repetitions to
+that cluster, we're still achieving a similar amount of maximum simulated repetitions.
+So there's different ways.
+Like what I love about clusters is you can actually get quite creative here.
+Like there's not, you know, a one way you need to do this.
+If you start thinking about the Physiology, like you said, you can start to come up with cool ways
+you can play with them, you can loop, utilize them.
+We could track progressive overload in some of these creative ways.
+And you know, a lot of people talk about, oh, nothing beats straight sets.
+Well, well programmed cluster, I don't know, getting more stimulating repetitions in a straight set
+fatigue wise, it's pretty good.
+Return on investment, I don't know.
+I think it's got a lot of utility.
+I agree.
+And I think this is a perfect example of something I mentioned a week or so ago when I said, you
+know, you're starting to program in a way that has some variety and kind of sort of interesting
+features associated with it that actually add value.
+I think so many of the programs that I've seen over the years just are variety for the sake of
+variety and don't actually beat just hammering away at the same set of exercises, you know, kind of
+all the time with the same kind of progression models.
+I think this kind of cluster technique when done, you know, alternating a kind of AB style, you
+know, is genuinely adding value and also hits the requirement of many clients.
+And we have to be honest about this.
+I think many clients expect some complexity in their routines if they want to see that because that
+for them is perceived value.
+Now we can argue that that's just not true, and I don't think it is true.
+But for them it is a perceived element of value that they have a complicated routine because that is
+seen to be better than a more simple one.
+But in this case that you're describing, I think it actually is adding value.
+It is actually not not only looking better for them, but also is in fact slightly better for, you
+know, the reasons you described a lot better.
+Probably not, you know, but it does have that value element that I think is is is missing, missing
+in so many other more complicated routines.
+I look at a periodized routine and there's things moving around all over the place and it's
+impossible to know where the progressive overload is happening and people are changing exercises and
+the atrophy is going to be happening and you're going to be missing benefits all over the place from
+things that you've done and then not carried on with.
+And it's just, you know, kind of absolute nightmare when you're trying to figure out whether there's
+anything going on there that's worth worth having.
+And you compare that with just a super simple, you know, list of 10 exercises done three times a
+week for body styling.
+You're like, well, clearly that's going to be way better.
+You know, people, people look at it and go, oh, that's a really basic on, you know, kind of an
+interesting routine.
+And it can't possibly work for me.
+And I'm like, seriously, there's very little on the Internet that's better than this for the, for
+the goal that you have.
+But what you're doing is you're simultaneously making a routine that looks like it has perceived
+value from the point of view of many clients, but simultaneously actually does add a little bit of
+value on top of what a sort of really basic routine might have.
+And I think that sweet spot is extraordinarily interesting for us as we kind of move forward in the
+industry as people start to kind of use these physiologically aligned methods of training.
+This kind of sort of training is very, very, very interesting to to sort of talk about because it
+hits the requirement of many clients simultaneously.
+Because just kind of very, very quick digression, you know, a lot of the time when we're talking
+about this stuff and we're talking about Physiology based strength training, you know, the people
+that are interested in this are, you know, a tiny fraction of the fitness industry and they already
+know how strength training works more or less.
+And so they're not sort of switched off by a routine that looks simple.
+You know, it's like they're just interested in getting results and they just want whatever routine
+gets in there.
+But many of the people who are then programming for the wider fitness industry or even the general
+population, they're working with a different situation.
+They're working with people who have different preconceptions, different ideas of what a strength
+training program should look like, and they want a different service.
+They want to see something that's slightly different because they have these, you know, ideas and
+everyone.
+We've got to meet everybody where they are.
+You can't just expect to go to somebody and say, well, I, I'm telling you that this is right for you
+and you've just got to do And some, don't get me wrong, sometimes those relationships can work.
+But you know, generally speaking, people have preconceptions and they want to, you know, kind of see
+some of those met when they, when they receive a training program.
+And I think this, that's why this is really interesting, because it actually does fit those.
+Yeah, definitely.
+There's a big sort of psychological component to that.
+And I think in, in my experience as a coach, what I've identified is when one is working one-on-one
+with a client, and especially if that the client has sought you out as a coach.
+And if you're working in a gym, the gym just just assigned to a client, it's different.
+But if a client sort you out, a they sort of have that trust process there.
+They sort of, you know, believe you to be an expert anyway and be in a one-on-one context.
+You're able to spend a little bit more time educating.
+And like, for me, I know when I was doing my one on ones in person, I don't do in person anymore.
+Most of that session between sets, like we're just, we're just educating.
+We're just talking about like, actually, hey, how does this work?
+How does programming work?
+What's the Physiology?
+And in that context, you might be able to give that client, you know, that sort of basic program
+you've explained.
+But where you struggle to do that as a coach is if you're doing 1 to many and you're coaching a
+group or you've got an online group or whatever that might be, and you don't have that opportunity
+to really educate each individual client.
+That's where I've found people might jump into one, one of my groups from another group and I'm like
+Hannah hard.
+I know my programming is a lot better than what they came from.
+And they'll be like, oh, but that we're doing, you know, three different rotations and like 6
+different workouts rotating every two weeks and this and the other.
+And like, man, that was so cool.
+I'm going to go back to that.
+It's like, man, there's, you know, there's, there's a disconnect here and it's hard to bridge that.
+And you know, you can always direct people to more information and podcasts and whatever else like
+you said there, if we can, if we can deal with that issue before it even arises by actually having a
+value add, that is what they expect.
+It's not even an issue in the 1st place.
+So I do find that there's a lot of value in this, for what it's worth, Clusters.
+I'm not like the cluster guy, so I'll program clusters.
+Probably maybe 30 to 50% of my programs will have clusters.
+So with my groups, I'd say maybe yeah, every second or third phase will have some clusters in there.
+Certainly not every exercise, usually one, maybe 2 exercises and a workout.
+So like you said, you know, do they, are they exponentially more valuable than straight sets?
+Well, no, but there's creative ways we can use them to actually be beneficial.
+And I know that we're getting a little bit long here, so I don't want to sort of divert us too much.
+But one way I do also use them, and we've touched on this in the past is when I program a cluster, I
+say, hey, I want you to be as explosive as possible.
+I want you to have as much, you know, sort of intent in that repetition as you can.
+And I might even instruct clients use an internal focus in that actual set as well rather than an an
+external focus.
+And I'll actually utilize that cluster as a way of increasing Modi unit recruitment in that phase.
+And then we might go away from clusters next phase, but we'll have some of that carry over adaption
+from hopefully increasing Modi unit recruitment as well.
+So we can actually use it to achieve different goals or different adaptions that we might not be
+able to get just with a normal straight set.
+Absolutely.
+I think the interesting thing there when you first, when you first came to me and suggested that,
+that was a, an interesting strategy and I kind of sat there and I did what I did, which is where I
+think through all of the ramifications.
+And I was like, that's a really interesting idea because you're already losing progressive overload
+capacity with clustered more or less anyway.
+And that's the single biggest problem with internal focus is that you lose progressive overload
+visibility because you can't really do, you know, kind of progressive overload and have an internal
+focus for multiple reasons.
+I mean, obviously, firstly, it just disconnects your expectation for how many repetitions you're
+going to get with your capacity to do repetitions because you're focusing on squeezing the muscle
+instead of getting the repetitions out.
+But secondly, if you do try and get back out to that mentality and start seeking sort of a target,
+like say for example, you look at your logbook and you go, oh, I did 8 reps last time with an
+internal focus, attention, I need to get 9 reps this time.
+Your brain immediately starts to lose the ability to do the internal focus because trying to hit the
+target is an external focus really is an external focus kind of drive.
+It is not itself an external focus attention, but it is going to push you to use an external focus
+attention because that's the best way of making sure that you get additional repetition.
+So so you can't, you actually can't really do kind of internal focus and progressive overload focus
+at the same time not focus.
+You can't seek progressive overload at the same time as using an internal focus.
+They're actually completely disparate ideas.
+But because clusters are not focusing on progress below anyway, they're just giving you the
+repetitions and saying go ahead and do the these repetitions.
+I think it means that you're not losing very much when you do that.
+So again, a fantastic example of how when you understand what Physiology is doing in each of these
+different scenarios, when you understand what Physiology is, how Physiology is working in the
+context of focus of attention and in terms of clusters and what progressive overview actually is.
+When you understand the meaning of these things and what's actually happening, you can play around
+with this stuff and start to connect dots and do things where you previously, because I've never
+programmed an internal focus with attention, just never.
+And I never really thought about ever doing that because I just wanted to make sure progressive
+overload was always happening.
+But then when you have a reason to do a cluster and you now kind of are sort of pegging it with a,
+an alternate, an alternate workout where progress whether it is happening.
+So, you know, you've always got that sort of structure in place and suddenly, but suddenly the, the
+internal focus of attention becomes interesting again.
+But you only knew that because of the Physiology telling you how things worked.
+It's just, it's so, so fascinating the way that we can start to make connections and introduce
+concepts and play around with stuff again.
+You know, sometimes people will try and pigeonhole you and go, you know, oh, you've always said that
+internal focus is not a good idea.
+But now suddenly you're saying it's OK.
+Well, you were trying to pigeonhole me or the, the person who was saying that was trying to
+pigeonhole way by saying that these are your opinions and you must always stand by them.
+And I'm like, no, Physiology is what matters.
+How you play around with that Physiology in the constant restraining strength training program is,
+is, is is up to you.
+But it's the Physiology that is the important bit.
+How you connect those dots and structure those programs is, is entirely up to you within the
+context.
+And if you find a way to make that work and physiologically it makes sense, that's fantastic.
+Just because I didn't think of it doesn't matter.
+I think the one who's, who's programming, even if someone's programming for themself, I, I thought
+this about exercise selection and, and rotating workouts and AB versus a A and stuff like that.
+And I've always thought if you're not that, I don't want to say knowledgeable, but really that's
+kind of what I'm getting at it.
+If you don't know this stuff super well, it's a lot easier just to keep it really simple and just
+do, you know, a, a, a or just sort of programming in a sort of not lowest common denominator, but
+there's the simplest way possible and it's really hard to mess that up.
+Like when you're programming just, you know, a, a, a full body straight sets, you can't really mess
+it up as long as you've got, you're following some pretty basic parameters.
+And as you said there, once you start to understand the Physiology more, that's where I think you
+can start to, you know, expand out and start to get more creative and play some of these things.
+And I don't think one's better than the other.
+Like I think if that's where you're at, I would encourage coaches who are listening to this, if
+you're not comfortable with your Physiology, program in a simple way, because your simple program is
+going to be better than you attempting to program in a complex way.
+Yeah, absolutely.
+I would say that and, and, and I would say that 90% of the time I'm just programming either full
+body A, a, a or full body AB.
+Even for me, I'm, you know, I don't go more complicated than that.
+You know, I just don't see the value in it doesn't need to be, you know, I think, you know, you're
+going to get 95% of the possible benefits that you could possibly get from either full body A or
+full body AB.
+Maybe you can squeak out an extra 5% here and there with some clever programming.
+But you know, when I see how much effort you put in to these programs and how much time you spend
+trying to figure out how to add these complexities, I think probably the return on investment for a
+single person probably isn't there.
+You know, you're programming for a group of people, a large group of people.
+I can see the ROI makes sense in that situation because you've got a large number of people who are
+benefiting from these.
+But if you're really just looking at a single person like I am, most of the time just isn't.
+I just don't see the value in that complexity.
+It doesn't.
+Make sense?
+Yeah, it's not necessary.
+I just like trouble solving like this is how I get to sleep at night.
+I'll just be playing with the Physiology thing.
+What if I did it like this?
+So what if I programmed it this way and then hopefully I remembered in the morning so I can talk to
+you about it.
+But if it's not something that someone's you know he's super passionate about, interested in, keep
+it simple.
+Yeah, I think there's there's so much value in the simple programs that we've talked about on this
+podcast, either just literally the programs that were being done in the Silver era or Physiology
+based programs which are incredibly similar to those programs with some tweaks around mainly
+exercise selection or also repetition range.
+We tend to go for heavier loading protocols, but again, that's logistical most of the time.
+I don't think it's a sort of a fundamental difference.
+I think it's just a logistical 1 and but really there's incredible overlap between those two things,
+which is really the purpose of this podcast as it always happened.
+Hopefully that's cleared up everyone's questions and classes.
+It's it's a hot topic.
+I know I certainly get a stack of questions and classes and I'm sure you do, no doubt so.
+And it's something I feel like maybe we've sat on a little while, like we haven't really talked
+about it much.
+I know people have wanted us to talk about it.
+So, you know, hopefully that sort of empowered you guys to think about it and, and know how to
+program it and what the benefits are and what maybe some of the shortcomings are and, and how you
+can utilize it for yourself or clients or whatever else.
+I'm excited to actually see what you guys come up with it with, you know, out of this and and you
+know, obviously I've just given some examples of how I program it, but there's if you understand the
+Physiology, there's a whole stack different ways you could use it.
+So hopefully we'll see some examples popping up on TikTok and instant seeing how you guys are
+running with this.
+But, and that's our goal here is to discuss the Physiology so you guys can play with it and actually
+know how does this stuff actually work in real life and how do you get the most out of it.
