@@ -16,9 +16,14 @@ Your committed path to first shipped product:
 3. **Learn one skill to shippable level** — e.g., useful Python script
 
 ## Automations Built
-1. **daily-news** - `/daily-news` sends Telegram summary. Output: `automations/daily-news/send_news.py`
-2. **youtube-notify** - Checks 88 channels via RSS, notifies on new uploads. Output: `automations/youtube-notify/check_uploads.py`
+1. **daily-news** - `/daily-news` sends Telegram summary at 6:30 AM Berlin time. Output: `automations/daily-news/send_news.py`
+2. **youtube-notify** - Checks 88 channels via RSS, notifies on new uploads at 4:30 PM Berlin time. Output: `automations/youtube-notify/check_uploads.py`
 3. **git-push** - Auto-pushes changes to GitHub after each task. Output: `automations/git-push/push.py`
+
+## Scheduled Automations (GitHub Actions)
+All automations run on GitHub Actions free tier with git-based state persistence:
+- `.github/workflows/daily-news.yml` - Runs 6:30 AM Berlin time
+- `.github/workflows/youtube-notify.yml` - Runs 4:30 PM Berlin time
 
 ## Skills Available
 1. **project-lint** - `/project-lint` audits project structure, validates config files, identifies junk files, auto-fixes minor issues, and provides continuation instructions at 50% context. Output: `context/logs/lint-report.md`
