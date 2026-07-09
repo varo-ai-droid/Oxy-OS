@@ -14,6 +14,13 @@
 - Added Python/VS Code ignores to `.gitignore`
 - Integrated into CLAUDE.md rules - will run after each task completion
 
+## 2026-07-09 — Project lint completed
+- Ran comprehensive project-lint audit
+- Fixed `context/knowledge/interests.md` - Updated outdated YouTube subscription status
+- Fixed `CLAUDE.md` - Removed `.env.example` from daily-news structure (root `.env.example` used)
+- All Python syntax valid, all YAML valid, structure now matches documentation
+- Project clean at 43% context usage
+
 ## 2026-07-09 — YouTube notify bot tested with separate token
 - Script successfully sent 21 notifications to separate Telegram bot
 - BOT_TOKEN_NOTIFY and CHAT_ID_NOTIFY working in root .env
@@ -23,6 +30,7 @@
 ## 2026-07-09 — YouTube notify bot upgraded to separate bot
 - Updated root `.env` - Added BOT_TOKEN_NOTIFY and CHAT_ID_NOTIFY placeholders
 - Updated `check_uploads.py` - Uses separate notify credentials
+```
 
 ## 2026-07-09 — YouTube notification automation BUILT & TESTED
 - Created `automations/youtube-notify/check_uploads.py` - 88-channel RSS checker
