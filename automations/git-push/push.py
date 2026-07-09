@@ -35,11 +35,11 @@ def get_changed_files():
     files = []
     for line in output.split('\n'):
         line = line.strip()
-        if line:
-            # Format: "?? file.txt" or "M  file.txt" - get the path (skip first 2 chars for status + space)
-            # Handle both porcelain formats
-            if ' ' in line:
-                files.append(line[3:].strip())
+        if line and ' ' in line:
+            # Format: "?? file.txt" or "M  file.txt" - split on space and get path
+            parts = line.split(' ', 1)
+            if len(parts) == 2:
+                files.append(parts[1].strip())
     return files
 
 
