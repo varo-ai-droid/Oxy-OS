@@ -1,7 +1,7 @@
 ---
 tags: [entity/person]
 aliases: [piri radar, ironman magazine]
-category: [[bodybuilder, author]]
+category: [[bodybuilder]]
 period: [[golden-era]]
 ---
 

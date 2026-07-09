@@ -1,7 +1,7 @@
 ---
 tags: [concept]
 aliases: [warming up, warm-up sets, Warm Up]
-related-concepts: [injury-prevention, post-activation-potentiation, pape]
+related-concepts: [post-activation-potentiation]
 evidence-level: medium
 ---
 

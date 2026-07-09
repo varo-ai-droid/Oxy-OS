@@ -22,8 +22,7 @@
 - NOTE: classic "high knowledge, not shown" pattern (see me.md execution-gap caveat).
 
 ## YouTube
-- Subscription data export promised (for "notify when favorites post" automation).
-- Not yet provided — pending.
+- **Takeout export received 2026-07-08** - 88 channels loaded to `context/knowledge/youtube-subscriptions.md`
 
 ## People / frameworks he references
 - Alex Hormozi (business), Arda Saatchi ("prove limits are fake"), Bruce Wayne / Iron Man (Jarvis as assistant model).

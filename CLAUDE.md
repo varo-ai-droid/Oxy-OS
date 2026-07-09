@@ -27,6 +27,8 @@ All automations run on GitHub Actions free tier with git-based state persistence
 
 ## Skills Available
 1. **project-lint** - `/project-lint` audits project structure, validates config files, identifies junk files, auto-fixes minor issues, and provides continuation instructions at 50% context. Output: `context/logs/lint-report.md`
+2. **roast** - `/roast` convenes a 6-persona council to pressure-test ideas, then delivers GO/RESHAPE/KILL verdict with cheapest 48-hour test to de-risk. Output: Terminal verdict with actionable recommendations.
+3. **alex-hormozi-mode** - `/alex` activates full Alex Hormozi persona for blunt, framework-heavy business advice. Use `/alex-exit` to deactivate. Wiki knowledge base at `projects/Alex-Hormozi-Coach/Hormozi-LLM-Wiki/wiki/`.
 
 ## Automations To Build
 1. Deep research on a topic using specified sources
@@ -47,7 +49,6 @@ context/                 # Knowledge hub
 automations/
 ├── daily-news/
 │   ├── send_news.py     # Main script
-│   ├── .env.example     # Telegram config template
 │   └── requirements.txt # Python dependencies
 ├── youtube-notify/
 │   ├── check_uploads.py  # Main script
