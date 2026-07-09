@@ -17,9 +17,10 @@ load_dotenv(Path(__file__).parent.parent.parent / '.env')
 BOT_TOKEN_NOTIFY = os.getenv('BOT_TOKEN_NOTIFY')
 CHAT_ID_NOTIFY = os.getenv('CHAT_ID_NOTIFY')
 
-# State tracking file
-STATE_FILE = 'last_videos.json'
-NOTIFIED_FILE = 'notified_videos.txt'
+# State tracking file (in same directory as script for GitHub Actions persistence)
+SCRIPT_DIR = Path(__file__).parent
+STATE_FILE = str(SCRIPT_DIR / 'last_videos.json')
+NOTIFIED_FILE = str(SCRIPT_DIR / 'notified_videos.txt')
 
 # All 88 YouTube channels from your subscriptions
 CHANNELS = [
