@@ -11,26 +11,27 @@ Oxy's personal AI operating system: a local-first assistant that knows everythin
 ## Current status
 - Scaffolded memory system on 2026-07-08: `me.md`, `memory.md`, `context/` hub (identity/areas/projects/knowledge/archive).
 - **2026-07-08: SHIPPED daily-news automation** - Tested and working. Telegram messages sending successfully.
+- **2026-07-09: SHIPPED youtube-notify automation** - 88-channel RSS checker working with separate Telegram bot. Tested with 21 notifications.
 - Previous AIOS attempts are effectively in `archive/` (failed, unrecoverable).
 
 ## Built automations (shipped)
-1. **daily-news** ✅ - Telegram news summary at 6:30 AM. P1/P2/P3 topic priority system. TESTED AND WORKING.
+1. **daily-news** ✅ - Telegram news summary at 6:30 AM Berlin time. P1/P2/P3 topic priority system. TESTED AND WORKING.
+2. **youtube-notify** ✅ - Checks 88 channels via RSS, notifies on new uploads. Runs via GitHub Actions with git-based state persistence.
 
 ## Wanted automations (next)
-2. Notify when favorite YouTubers post.
 3. Deep research on a topic using specified sources.
-4. Draft a business plan.
+4. Draft a business plan AND execute.
 
 ## Planned integrations (future)
 email, calendar, to-do app, Google Drive, various APIs.
 
 ## Hosting / ops
+- GitHub Actions for scheduled automations (free tier, git-based state persistence)
 - Local on this laptop; pushed to a Git repo (Oxy has Git experience).
-- Open to a 24/7 private server for automations later, no current need.
 
 ## Input method
 Both typing and voice (Open Wispr / Whisper dictation).
 
 ## Next steps
-- Schedule via Windows Task Scheduler at 6:30 AM daily
-- Monitor for a week, then refine topics/sources
+- Add GitHub secrets (BOT_TOKEN, CHAT_ID, BOT_TOKEN_NOTIFY, CHAT_ID_NOTIFY) in repo settings
+- Monitor GitHub Actions runs for a week

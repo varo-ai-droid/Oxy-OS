@@ -1,0 +1,43 @@
+name: YouTube Notification Check
+
+on:
+  schedule:
+    # 4:30 PM Berlin time = 14:30 UTC (summer time UTC+2)
+    - cron: '30 14 * * *'
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  check-videos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      
+      - name: Install Dependencies
+        run: |
+          pip install feedparser python-dotenv requests
+      
+      - name: Set Environment Variables
+        run: |
+          echo "BOT_TOKEN_NOTIFY=${{ secrets.BOT_TOKEN_NOTIFY }}" >> $GITHUB_ENV
+          echo "CHAT_ID_NOTIFY=${{ secrets.CHAT_ID_NOTIFY }}" >> $GITHUB_ENV
+      
+      - name: Run YouTube Check Script
+        run: python automations/youtube-notify/check_uploads.py
+        working-directory: ${{ github.workspace }}
+      
+      - name: Commit State Updates
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add automations/youtube-notify/last_videos.json automations/youtube-notify/notified_videos.txt 2>/dev/null || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update youtube notify state [skip ci]"
+          git push
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

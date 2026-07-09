@@ -1,5 +1,13 @@
 # memory.md — Running Memory Log
 
+## 2026-07-09 — GitHub Actions scheduled automations CREATED
+
+- Created `.github/workflows/daily-news.yml` - Scheduled for 6:30 AM Berlin time (4:30 AM UTC)
+- Created `.github/workflows/youtube-notify.yml` - Scheduled for 4:30 PM Berlin time (14:30 UTC), with git persistence for state files
+- Created `automations/youtube-notify/last_videos.json` - State tracking file for video deduplication
+- State persistence via git: Both workflows will commit updated state back to repository after each run
+- Required GitHub secrets: BOT_TOKEN, CHAT_ID, BOT_TOKEN_NOTIFY, CHAT_ID_NOTIFY (to be added manually in repo settings)
+
 ## 2026-07-09 — Git auto-push automation SETUP & TESTED
 - Created `automations/git-push/push.py` - Auto-push script with conventional commits
 - Initialized git repo and pushed to GitHub: https://github.com/varo-ai-droid/Oxy-OS

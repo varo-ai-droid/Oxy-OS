@@ -1,0 +1,32 @@
+name: Daily News Summary
+
+on:
+  schedule:
+    # 6:30 AM Berlin time = 4:30 AM UTC (summer time UTC+2)
+    - cron: '30 4 * * *'
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  send-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      
+      - name: Install Dependencies
+        run: |
+          pip install feedparser python-dotenv requests googletrans==4.0.0rc1
+      
+      - name: Set Environment Variables
+        run: |
+          echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> $GITHUB_ENV
+          echo "CHAT_ID=${{ secrets.CHAT_ID }}" >> $GITHUB_ENV
+      
+      - name: Run Daily News Script
+        run: python automations/daily-news/send_news.py
+        working-directory: ${{ github.workspace }}
