@@ -176,8 +176,9 @@
       "bases:Neue Base erstellen": false
     }
   },
-  "active": "41d2faff0630b7c1",
+  "active": "1c08eb5fca44258b",
   "lastOpenFiles": [
+    "gym-wiki/CONTINUATION.md",
     "automations/git-push/push.py",
     "automations/git-push",
     "gym-wiki/wiki/entities/bill-pearl.md",
@@ -212,7 +213,6 @@
     "automations/youtube-notify/check_uploads.py",
     "automations/youtube-notify",
     "c",
-    "automations/daily-news/__pycache__/send_news.cpython-312.pyc",
-    "automations/daily-news/__pycache__"
+    "automations/daily-news/__pycache__/send_news.cpython-312.pyc"
   ]
 }
