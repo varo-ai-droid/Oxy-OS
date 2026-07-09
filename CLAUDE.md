@@ -18,13 +18,14 @@ Your committed path to first shipped product:
 ## Automations Built
 1. **daily-news** - `/daily-news` sends Telegram summary. Output: `automations/daily-news/send_news.py`
 2. **youtube-notify** - Checks 88 channels via RSS, notifies on new uploads. Output: `automations/youtube-notify/check_uploads.py`
+3. **git-push** - Auto-pushes changes to GitHub after each task. Output: `automations/git-push/push.py`
 
 ## Skills Available
 1. **project-lint** - `/project-lint` audits project structure, validates config files, identifies junk files, auto-fixes minor issues, and provides continuation instructions at 50% context. Output: `context/logs/lint-report.md`
 
 ## Automations To Build
-3. Deep research on a topic using specified sources
-4. Draft a business plan → execute (not just document)
+1. Deep research on a topic using specified sources
+2. Draft a business plan → execute (not just document)
 
 ## Project Structure
 ```
@@ -43,10 +44,12 @@ automations/
 │   ├── send_news.py     # Main script
 │   ├── .env.example     # Telegram config template
 │   └── requirements.txt # Python dependencies
-└── youtube-notify/
-    ├── check_uploads.py  # Main script
-    ├── .env.example     # Telegram config template
-    └── requirements.txt # Dependencies
+├── youtube-notify/
+│   ├── check_uploads.py  # Main script
+│   ├── .env.example     # Telegram config template
+│   └── requirements.txt # Dependencies
+└── git-push/
+    └── push.py         # Auto-push script
 ```
 
 ## Key Principles
@@ -62,12 +65,17 @@ automations/
 - Raise errors explicitly — never swallow them or add fallbacks you didn't ask for
 - **File reading policy:** Skip reading `a.md`, `AI_OS_Video_Summary.md`, and `errors.log` unless specifically requested
 
+## Git Auto-Push Protocol
+- After each task I complete, I will run `python automations/git-push/push.py` to push changes
+- Uses conventional commit messages (feat, fix, docs, chore)
+- Repo: https://github.com/varo-ai-droid/Oxy-OS
+
 ## Future Integrations (Planned)
 email, calendar, Todoist, Google Drive, various APIs — but only after first ship
 
 ## Hosting / Ops
 - Local on Dell G15 laptop (RTX 4060)
-- Pushed to Git (you have Git experience)
+- Pushed to Git (auto-push enabled)
 - Open to 24/7 private server later, but no current need
 
 ## Your Communication Preferences
