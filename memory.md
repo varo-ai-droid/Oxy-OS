@@ -1,5 +1,12 @@
 # memory.md — Running Memory Log
 
+## 2026-07-11 — Project lint cleanup completed
+- Deleted duplicate `CLAUDE.md` (was identical copy of AGENTS.md)
+- Removed `.claude/` directory entirely (consolidated to `.agents/` for Cline/Klein only)
+- Deleted junk files: `sofatutor_pricing.html`, `temp_edtech.html`, research prompts
+- Added state files to `.gitignore`: `message_ids.txt`, `notified_videos.txt`, `last_videos.json`
+- Updated AGENTS.md structure to include `automations/spotify-transcripts/`
+
 ## 2026-07-09 — GitHub Actions scheduled automations CREATED
 
 - Created `.github/workflows/daily-news.yml` - Scheduled for 6:30 AM Berlin time (4:30 AM UTC)

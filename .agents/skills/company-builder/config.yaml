@@ -1,0 +1,97 @@
+# Company Builder Skill Configuration
+# All paths relative to skill root: .agents/skills/company-builder/
+
+codex:
+  cli_path: "codex"          # assumes 'codex' is in PATH
+  default_model: "sonnet"    # or "opus" for heavier reasoning
+  timeout_seconds: 300       # per agent call
+  max_parallel: 3            # max concurrent codex processes (4060 laptop)
+
+phases:
+  pain_hunt:
+    researchers: 10
+    max_parallel: 3
+    sources:
+      - reddit
+      - hackernews
+      - g2
+      - trustpilot
+      - twitter
+      - shopify_forums
+      - indiehackers
+      - quora
+      - app_store
+      - google_play
+    problems_per_researcher: 5
+    output:
+      raw: "output/pain-hunt/raw-problems.md"
+      candidates: "output/pain-hunt/candidates.md"
+
+  tournament:
+    judges: 5
+    criteria:
+      - pain
+      - urgency
+      - reachability
+      - willingness_to_pay
+      - buildability
+      - incumbent_weakness
+    top_k: 4
+    final_judges: 3
+    output:
+      scores: "output/tournament/scores.md"
+      winner: "output/tournament/winner.md"
+
+  business_design:
+    researchers: 3
+    focus_areas:
+      - competitors
+      - platform_apis
+      - regulations
+      - unit_economics
+    output:
+      plan: "output/business-design/business-plan.md"
+
+  brand:
+    logo_iterations: 6
+    domain_check: true
+    output:
+      guide: "output/brand/brand-guide.md"
+      logo: "output/brand/logo.svg"
+
+  landing_page:
+    output:
+      dir: "output/product/"
+
+  launch_video:
+    output:
+      script: "output/videos/launch-script.md"
+
+  founder_video:
+    output:
+      script: "output/videos/founder-script.md"
+
+  red_team:
+    skeptics: 6
+    attack_vectors:
+      - tam
+      - pricing
+      - tech_feasibility
+      - distribution
+      - legal
+      - retention
+    output:
+      verdict: "output/red-team/verdict.md"
+      fixes: "output/red-team/fixes.md"
+
+  recap:
+    output:
+      html: "output/recap/index.html"
+
+# External tools
+tools:
+  whois: "whois"              # CLI, no API key needed
+  dig: "dig"                  # fallback for domain check
+
+# State
+state_file: "state.json"
