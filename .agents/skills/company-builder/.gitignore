@@ -1,0 +1,7 @@
+# Company Builder Output
+output/
+state.json
+*.mp4
+*.wav
+*.png
+*.jpg

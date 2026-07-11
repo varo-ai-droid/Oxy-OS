@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 """
 Company Builder Orchestrator
-Runs the 9-phase company building process using parallel Codex agents.
+Runs the 9-phase company building process.
 """
 
 import os
 import sys
 import json
-import time
 import yaml
-import subprocess
-import threading
+import time
+import argparse
 from pathlib import Path
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Optional
 from dataclasses import dataclass, asdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from string import Template
 
+# Add scripts to path
 SKILL_ROOT = Path(__file__).parent
-CONFIG_PATH = SKILL_ROOT / "config.yaml"
-STATE_PATH = SKILL_ROOT / "state.json"
-PROMPTS_DIR = SKILL_ROOT / "prompts"
 SCRIPTS_DIR = SKILL_ROOT / "scripts"
+sys.path.insert(0, str(SCRIPTS_DIR))
+
+from run_codex_agent import run_codex_agent, run_parallel_agents
 
 
 @dataclass
@@ -36,29 +36,27 @@ class PhaseState:
 
 
 def load_config() -> Dict:
-    with open(CONFIG_PATH) as f:
+    with open(SKILL_ROOT / "config.yaml") as f:
         return yaml.safe_load(f)
 
 
 def load_state() -> Dict[str, PhaseState]:
-    if STATE_PATH.exists():
-        with open(STATE_PATH) as f:
+    state_path = SKILL_ROOT / "state.json"
+    if state_path.exists():
+        with open(state_path) as f:
             data = json.load(f)
         return {k: PhaseState(**v) for k, v in data.items()}
     return {}
 
 
 def save_state(state: Dict[str, PhaseState]):
-    with open(STATE_PATH, "w") as f:
+    state_path = SKILL_ROOT / "state.json"
+    with open(state_path, "w") as f:
         json.dump({k: asdict(v) for k, v in state.items()}, f, indent=2)
 
 
-def ensure_dir(path: Path):
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-
 def read_prompt(name: str) -> str:
-    path = PROMPTS_DIR / f"{name}.md"
+    path = SKILL_ROOT / "prompts" / f"{name}.md"
     if not path.exists():
         raise FileNotFoundError(f"Prompt not found: {path}")
     return path.read_text(encoding="utf-8")
@@ -68,91 +66,41 @@ def render_prompt(template: str, **kwargs) -> str:
     return Template(template).safe_substitute(**kwargs)
 
 
-def run_codex_agent(prompt: str, timeout: int = 300) -> str:
-    """Run a single Codex agent with the given prompt via stdin."""
-    env = os.environ.copy()
-    env["PYTHONIOENCODING"] = "utf-8"
-    
-    cmd = ["codex", "exec", "--json", "-"]
-    
-    try:
-        proc = subprocess.run(
-            cmd,
-            input=prompt.encode("utf-8"),
-            capture_output=True,
-            timeout=timeout,
-            env=env,
-        )
-    except subprocess.TimeoutExpired:
-        raise RuntimeError(f"Codex agent timed out after {timeout}s")
-    
-    if proc.returncode != 0:
-        raise RuntimeError(f"Codex agent failed (exit {proc.returncode}): {proc.stderr.decode('utf-8', errors='replace')}")
-    
-    # Parse JSONL output, extract agent_message text
-    output_text = ""
-    for line in proc.stdout.decode("utf-8", errors="replace").strip().split("\n"):
-        if not line:
-            continue
-        try:
-            event = json.loads(line)
-            if event.get("type") == "item.completed":
-                item = event.get("item", {})
-                if item.get("type") == "agent_message":
-                    output_text += item.get("text", "")
-        except json.JSONDecodeError:
-            pass
-    
-    return output_text.strip()
+def get_output_path(path_str: str) -> Path:
+    """Get anchored output path for a relative path string."""
+    return SKILL_ROOT / path_str
 
 
-def run_parallel_agents(prompts: List[str], max_parallel: int, timeout: int) -> List[str]:
-    """Run multiple agents in parallel with thread pool."""
-    results = [None] * len(prompts)
-    
-    def run_one(idx: int, prompt: str):
-        try:
-            results[idx] = run_codex_agent(prompt, timeout)
-        except Exception as e:
-            results[idx] = f"ERROR: {e}"
-    
-    with ThreadPoolExecutor(max_workers=max_parallel) as executor:
-        futures = [executor.submit(run_one, i, p) for i, p in enumerate(prompts)]
-        for f in as_completed(futures):
-            f.result()  # raise any exceptions
-    
-    return results
+def ensure_dir(path_str: str):
+    """Ensure parent directory exists for an output path."""
+    path = get_output_path(path_str)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
 
 
-def check_domain_available(domain: str) -> bool:
-    """Check if domain is available using whois."""
-    import subprocess
-    try:
-        result = subprocess.run(["whois", domain], capture_output=True, text=True, timeout=10)
-        output = result.stdout.lower()
-        # Common patterns for available domains
-        return any(p in output for p in [
-            "no match", "not found", "available", "no data found",
-            "status: available", "domain not found"
-        ])
-    except Exception:
-        return False
+def read_output_files(file_paths: List[str]) -> str:
+    """Read and concatenate output files for context passing."""
+    parts = []
+    for fp in file_paths:
+        p = Path(fp)
+        if p.exists():
+            parts.append(f"=== {fp} ===\n{p.read_text(encoding='utf-8')}")
+    return "\n\n".join(parts)
 
 
 def phase1_pain_hunt(config: Dict, state: Dict) -> List[str]:
     """Phase 1: Parallel pain hunting across sources."""
     phase_cfg = config["phases"]["pain_hunt"]
     sources = phase_cfg["sources"]
-    n_researchers = phase_cfg["researchers"]
+    n_researchers = min(phase_cfg["researchers"], len(sources))
     per_researcher = phase_cfg["problems_per_researcher"]
     max_parallel = phase_cfg["max_parallel"]
     timeout = config["codex"]["timeout_seconds"]
     
     template = read_prompt("phase1_pain_hunt")
-    
-    # Assign sources to researchers (round-robin)
     prompts = []
-    for i in range(n_researcher := min(n_researchers, len(sources))):
+    
+    for i in range(n_researchers):
         source = sources[i % len(sources)]
         prompt = render_prompt(template,
             researcher_id=i + 1,
@@ -162,7 +110,6 @@ def phase1_pain_hunt(config: Dict, state: Dict) -> List[str]:
         )
         prompts.append(prompt)
     
-    # Run in parallel batches
     print(f"  Launching {len(prompts)} researchers (max {max_parallel} parallel)...")
     results = run_parallel_agents(prompts, max_parallel, timeout)
     
@@ -171,7 +118,6 @@ def phase1_pain_hunt(config: Dict, state: Dict) -> List[str]:
     ensure_dir(raw_path)
     raw_path.write_text("\n\n---\n\n".join(results), encoding="utf-8")
     
-    # Deduplicate (Phase 2 will do tournament, this is just collection)
     candidates_path = Path(phase_cfg["output"]["candidates"])
     ensure_dir(candidates_path)
     candidates_path.write_text("\n\n".join([
@@ -187,36 +133,36 @@ def phase2_tournament(config: Dict, state: Dict) -> List[str]:
     phase_cfg = config["phases"]["tournament"]
     timeout = config["codex"]["timeout_seconds"]
     
-    # Load candidates
     candidates_text = Path(config["phases"]["pain_hunt"]["output"]["candidates"]).read_text()
     
+    # Round 1: 5 judges score all candidates
     template = read_prompt("phase2_judge")
     judges = phase_cfg["judges"]
     criteria = phase_cfg["criteria"]
     
-    # Round 1: 5 judges score all candidates
     prompts = []
     for j in range(judges):
         prompt = render_prompt(template,
             judge_id=j + 1,
             candidates=candidates_text,
             criteria="\n".join(f"- {c}" for c in criteria),
-            round="round1"
+            round="round1",
+            top_k=phase_cfg["top_k"]
         )
         prompts.append(prompt)
     
     print(f"  Round 1: {judges} judges scoring...")
     scores = run_parallel_agents(prompts, min(judges, config["codex"]["max_parallel"]), timeout)
     
-    # TODO: Parse scores, select top_k, run advocate/skeptic, final judges
-    # For now, save scores and pick first as winner (placeholder)
     scores_path = Path(phase_cfg["output"]["scores"])
     ensure_dir(scores_path)
     scores_path.write_text("\n\n---\n\n".join(scores), encoding="utf-8")
     
+    # TODO: Parse scores, select top_k, run advocate/skeptic, final judges
+    # For MVP: pick first candidate as winner
     winner_path = Path(phase_cfg["output"]["winner"])
     ensure_dir(winner_path)
-    winner_path.write_text(f"# Winner (placeholder)\n\nBased on tournament:\n\n{candidates_text[:2000]}", encoding="utf-8")
+    winner_path.write_text(f"# Winner (placeholder)\n\nBased on tournament:\n\n{candidates_text[:3000]}", encoding="utf-8")
     
     return [str(scores_path), str(winner_path)]
 
@@ -259,33 +205,28 @@ def phase4_brand(config: Dict, state: Dict) -> List[str]:
     timeout = config["codex"]["timeout_seconds"]
     
     plan_text = Path(config["phases"]["business_design"]["output"]["plan"]).read_text()
-    
     template = read_prompt("phase4_brand")
     iterations = phase_cfg["logo_iterations"]
     
-    prompts = []
+    results = []
     for i in range(iterations):
         prompt = render_prompt(template,
             iteration=i + 1,
+            max_iterations=iterations,
             business_plan=plan_text,
-            previous_feedback="" if i == 0 else "Iterate based on previous critique"
+            previous_feedback="" if i == 0 else results[-1][-2000:]
         )
-        prompts.append(prompt)
-    
-    print(f"  {iterations} logo iterations + brand guide...")
-    # Run sequentially for brand (each iteration builds on previous)
-    results = []
-    for p in prompts:
-        results.append(run_codex_agent(p, timeout))
+        print(f"  Brand iteration {i+1}/{iterations}...")
+        result = run_codex_agent(prompt, timeout)
+        results.append(result)
     
     guide_path = Path(phase_cfg["output"]["guide"])
     ensure_dir(guide_path)
     guide_path.write_text("\n\n---\n\n".join(results), encoding="utf-8")
     
-    # Logo placeholder (SVG would come from agent)
     logo_path = Path(phase_cfg["output"]["logo"])
     ensure_dir(logo_path)
-    logo_path.write_text("<svg>Logo placeholder</svg>", encoding="utf-8")
+    logo_path.write_text("<svg>Logo placeholder - feed prompt to image generator</svg>", encoding="utf-8")
     
     return [str(guide_path), str(logo_path)]
 
@@ -318,11 +259,16 @@ def phase6_launch_video(config: Dict, state: Dict) -> List[str]:
     
     brand_text = Path(config["phases"]["brand"]["output"]["guide"]).read_text()
     plan_text = Path(config["phases"]["business_design"]["output"]["plan"]).read_text()
+    landing_text = Path(config["phases"]["landing_page"]["output"]["dir"]).joinpath("index.html").read_text()[:5000]
     
     template = read_prompt("phase6_launch_video")
-    prompt = render_prompt(template, brand_guide=brand_text, business_plan=plan_text)
+    prompt = render_prompt(template,
+        brand_guide=brand_text,
+        business_plan=plan_text,
+        landing_page_summary=landing_text
+    )
     
-    print("  Generating launch video script...")
+    print("  Writing launch video script...")
     result = run_codex_agent(prompt, timeout)
     
     script_path = Path(phase_cfg["output"]["script"])
@@ -341,9 +287,12 @@ def phase7_founder_video(config: Dict, state: Dict) -> List[str]:
     plan_text = Path(config["phases"]["business_design"]["output"]["plan"]).read_text()
     
     template = read_prompt("phase7_founder_video")
-    prompt = render_prompt(template, brand_guide=brand_text, business_plan=plan_text)
+    prompt = render_prompt(template,
+        brand_guide=brand_text,
+        business_plan=plan_text
+    )
     
-    print("  Generating founder video script...")
+    print("  Writing founder video script...")
     result = run_codex_agent(prompt, timeout)
     
     script_path = Path(phase_cfg["output"]["script"])
@@ -360,54 +309,60 @@ def phase8_red_team(config: Dict, state: Dict) -> List[str]:
     
     plan_text = Path(config["phases"]["business_design"]["output"]["plan"]).read_text()
     brand_text = Path(config["phases"]["brand"]["output"]["guide"]).read_text()
-    landing_text = Path(config["phases"]["landing_page"]["output"]["dir"] + "/index.html").read_text()
+    landing_text = Path(config["phases"]["landing_page"]["output"]["dir"]).joinpath("index.html").read_text()[:5000]
     
     template = read_prompt("phase8_red_team")
-    vectors = phase_cfg["attack_vectors"]
-    max_parallel = config["codex"]["max_parallel"]
+    attack_vectors = phase_cfg["attack_vectors"]
+    skeptics = min(phase_cfg["skeptics"], len(attack_vectors))
     
     prompts = []
-    for i, vector in enumerate(vectors):
+    for i in range(skeptics):
+        vector = attack_vectors[i % len(attack_vectors)]
         prompt = render_prompt(template,
-            skeptic_id=i + 1,
             attack_vector=vector,
             business_plan=plan_text,
             brand_guide=brand_text,
-            landing_page=landing_text[:5000]
+            landing_page_summary=landing_text
         )
         prompts.append(prompt)
     
-    print(f"  {len(vectors)} skeptics attacking...")
-    results = run_parallel_agents(prompts, min(len(vectors), max_parallel), timeout)
+    print(f"  Red team: {skeptics} skeptics attacking...")
+    results = run_parallel_agents(prompts, min(skeptics, config["codex"]["max_parallel"]), timeout)
     
     verdict_path = Path(phase_cfg["output"]["verdict"])
     ensure_dir(verdict_path)
     verdict_path.write_text("\n\n---\n\n".join(results), encoding="utf-8")
     
-    # Apply fixes (simplified)
+    # TODO: Parse verdicts, generate fixes
     fixes_path = Path(phase_cfg["output"]["fixes"])
     ensure_dir(fixes_path)
-    fixes_path.write_text("# Fixes Applied\n\nAll attack vectors addressed in updated artifacts.", encoding="utf-8")
+    fixes_path.write_text("# Fixes Applied\n\n[Auto-generated after parsing verdicts]", encoding="utf-8")
     
     return [str(verdict_path), str(fixes_path)]
 
 
 def phase9_recap(config: Dict, state: Dict) -> List[str]:
-    """Phase 9: Package HTML recap."""
+    """Phase 9: Package recap."""
     phase_cfg = config["phases"]["recap"]
     timeout = config["codex"]["timeout_seconds"]
     
-    # Gather all artifacts
+    # Collect all artifact paths
     artifacts = {}
-    for phase_name in ["pain_hunt", "tournament", "business_design", "brand", "landing_page", "launch_video", "founder_video", "red_team"]:
-        out = config["phases"][phase_name].get("output", {})
-        for key, path in out.items():
-            p = Path(path)
-            if p.exists():
-                artifacts[f"{phase_name}.{key}"] = p.read_text(encoding="utf-8")[:3000]
+    for phase_name, phase_cfg in config["phases"].items():
+        if "output" in phase_cfg:
+            out = phase_cfg["output"]
+            if isinstance(out, dict):
+                for k, v in out.items():
+                    artifacts[f"{phase_name}.{k}"] = v
+            else:
+                artifacts[phase_name] = out
     
     template = read_prompt("phase9_recap")
-    prompt = render_prompt(template, artifacts=json.dumps(artifacts, indent=2))
+    prompt = render_prompt(template,
+        artifacts_json=json.dumps(artifacts, indent=2),
+        company_name="CounterBrief",  # Would parse from winner
+        timestamp=datetime.now().isoformat()
+    )
     
     print("  Generating HTML recap...")
     result = run_codex_agent(prompt, timeout)
@@ -420,64 +375,111 @@ def phase9_recap(config: Dict, state: Dict) -> List[str]:
 
 
 PHASES = {
-    "pain_hunt": phase1_pain_hunt,
-    "tournament": phase2_tournament,
-    "business_design": phase3_business_design,
-    "brand": phase4_brand,
-    "landing_page": phase5_landing_page,
-    "launch_video": phase6_launch_video,
-    "founder_video": phase7_founder_video,
-    "red_team": phase8_red_team,
-    "recap": phase9_recap,
+    1: ("Pain Hunt", phase1_pain_hunt),
+    2: ("Tournament", phase2_tournament),
+    3: ("Business Design", phase3_business_design),
+    4: ("Brand", phase4_brand),
+    5: ("Landing Page", phase5_landing_page),
+    6: ("Launch Video", phase6_launch_video),
+    7: ("Founder Video", phase7_founder_video),
+    8: ("Red Team", phase8_red_team),
+    9: ("Recap", phase9_recap),
 }
 
 
+def run_phase(num: int, config: Dict, state: Dict) -> List[str]:
+    name, fn = PHASES[num]
+    phase_state = state.get(str(num))
+    
+    if phase_state and phase_state.status == "completed":
+        print(f"Phase {num} ({name}): already completed, skipping")
+        return phase_state.output_files or []
+    
+    # Update state: running
+    state[str(num)] = PhaseState(name=name, status="running", started_at=datetime.now().isoformat())
+    save_state(state)
+    
+    print(f"\n{'='*50}")
+    print(f"PHASE {num}: {name}")
+    print(f"{'='*50}")
+    
+    try:
+        outputs = fn(config, state)
+        
+        # Update state: completed
+        state[str(num)] = PhaseState(
+            name=name,
+            status="completed",
+            started_at=state[str(num)].started_at,
+            completed_at=datetime.now().isoformat(),
+            output_files=outputs
+        )
+        save_state(state)
+        print(f"[OK] Phase {num} completed. Outputs: {outputs}")
+        return outputs
+        
+    except Exception as e:
+        state[str(num)] = PhaseState(
+            name=name,
+            status="failed",
+            started_at=state[str(num)].started_at,
+            completed_at=datetime.now().isoformat(),
+            error=str(e)
+        )
+        save_state(state)
+        print(f"[FAIL] Phase {num} failed: {e}")
+        raise
+
+
 def main():
-    print("=" * 60)
-    print("  COMPANY BUILDER - 9 Phase Orchestration")
-    print("=" * 60)
+    parser = argparse.ArgumentParser(description="Company Builder Orchestrator")
+    parser.add_argument("--phase", type=int, help="Run specific phase (1-9)")
+    parser.add_argument("--resume", action="store_true", help="Resume from last completed phase")
+    parser.add_argument("--reset", action="store_true", help="Reset state and start fresh")
+    args = parser.parse_args()
     
     config = load_config()
-    state = load_state()
     
-    # Initialize state for all phases
-    for phase_name in PHASES:
-        if phase_name not in state:
-            state[phase_name] = PhaseState(name=phase_name, status="pending")
+    if args.reset:
+        state = {}
+        (SKILL_ROOT / "state.json").unlink(missing_ok=True)
+        print("State reset.")
+    else:
+        state = load_state()
     
-    # Run phases sequentially
-    for phase_name, phase_fn in PHASES.items():
-        phase_state = state[phase_name]
-        
-        if phase_state.status == "completed":
-            print(f"\n[{phase_name}] SKIPPED (already completed)")
-            continue
-        
-        print(f"\n[{phase_name}] STARTING...")
-        phase_state.status = "running"
-        phase_state.started_at = datetime.now().isoformat()
-        save_state(state)
-        
+    if args.phase:
+        phases_to_run = [args.phase]
+    elif args.resume:
+        # Find first incomplete phase
+        phases_to_run = []
+        for i in range(1, 10):
+            s = state.get(str(i))
+            if not s or s.status != "completed":
+                phases_to_run = list(range(i, 10))
+                break
+        if not phases_to_run:
+            print("All phases completed!")
+            return
+    else:
+        phases_to_run = list(range(1, 10))
+    
+    print(f"Running phases: {phases_to_run}")
+    print(f"Config: {config['codex']['max_parallel']} parallel, {config['codex']['timeout_seconds']}s timeout")
+    
+    for phase_num in phases_to_run:
         try:
-            outputs = phase_fn(config, state)
-            phase_state.status = "completed"
-            phase_state.completed_at = datetime.now().isoformat()
-            phase_state.output_files = outputs
-            print(f"[{phase_name}] COMPLETED -> {outputs}")
+            run_phase(phase_num, config, state)
         except Exception as e:
-            phase_state.status = "failed"
-            phase_state.error = str(e)
-            print(f"[{phase_name}] FAILED: {e}")
-            save_state(state)
+            print(f"\n[FAIL] Pipeline failed at phase {phase_num}: {e}")
             sys.exit(1)
-        
-        save_state(state)
     
-    print("\n" + "=" * 60)
-    print("  ALL PHASES COMPLETE")
-    print("=" * 60)
-    recap_html = Path(config["phases"]["recap"]["output"]["html"])
-    print(f"Open: {recap_html.absolute()}")
+    print("="*50)
+    print("ALL PHASES COMPLETE!")
+    print("="*50)
+    recap_path = SKILL_ROOT / "output" / "recap" / "index.html"
+    if recap_path.exists():
+        print(f"\nOpen: {recap_path}")
+        print(f"      file://{recap_path.absolute()}")
 
 
 if __name__ == "__main__":

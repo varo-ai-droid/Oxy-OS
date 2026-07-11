@@ -29,6 +29,8 @@ All automations run on GitHub Actions free tier with git-based state persistence
 1. **project-lint** - `/project-lint` audits project structure, validates config files, identifies junk files, auto-fixes minor issues, and provides continuation instructions at 50% context. Output: `context/logs/lint-report.md`
 2. **roast** - `/roast` convenes a 6-persona council to pressure-test ideas, then delivers GO/RESHAPE/KILL verdict with cheapest 48-hour test to de-risk. Output: Terminal verdict with actionable recommendations.
 3. **alex-hormozi-mode** - `/alex` activates full Alex Hormozi persona for blunt, framework-heavy business advice. Use `/alex-exit` to deactivate. Wiki knowledge base at `projects/Alex-Hormozi-Coach/Hormozi-LLM-Wiki/wiki/`.
+4. **company-builder** - `/company-builder` runs 9-phase autonomous company building (pain hunt → tournament → business design → brand → product → videos → red team → recap). Output: `.agents/skills/company-builder/output/recap/index.html`
+5. **coding** - Behavioral guidelines to reduce common LLM coding mistakes (Karpathy-derived). Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
 
 ## Automations To Build
 1. Deep research on a topic using specified sources
@@ -59,6 +61,17 @@ automations/
 └── spotify-transcripts/
     ├── extract_transcripts.py  # Spotify transcript extractor
     └── requirements.txt        # spotify_scraper dependency
+.agents/skills/
+├── project-lint/
+├── roast/
+├── alex-hormozi-mode/
+├── coding/                    # Karpathy coding guidelines
+└── company-builder/          # 9-phase company builder
+    ├── orchestrator.py       # Main entry point
+    ├── config.yaml           # Tunable parameters
+    ├── prompts/              # 15 prompt templates
+    ├── scripts/              # Helper scripts
+    └── output/               # Generated artifacts (gitignored)
 ```
 
 ## Key Principles

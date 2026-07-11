@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-Codex Agent Runner - Helper for running Codex CLI as a subprocess.
+Codex Agent Runner - Helper for running Codex CLI as subprocess.
 Used by orchestrator.py for parallel agent execution.
 """
 
 import subprocess
 import json
-import sys
 import os
+import sys
 from typing import Optional
 
 
-def run_agent(prompt: str, timeout: int = 300, model: str = "sonnet") -> str:
+def run_codex_agent(prompt: str, timeout: int = 300, model: str = "sonnet") -> str:
     """
     Run a Codex agent with the given prompt.
     
     Args:
         prompt: The prompt to send to the agent
-        timeout: Timeout in seconds
+        timeout: Timeout in seconds (default 5 min)
         model: Model to use (sonnet, opus, etc.)
     
     Returns:
@@ -27,7 +27,11 @@ def run_agent(prompt: str, timeout: int = 300, model: str = "sonnet") -> str:
     env["PYTHONIOENCODING"] = "utf-8"
     
     # Use exec with stdin for prompt
-    cmd = ["codex", "exec", "--json", "-"]
+    # On Windows, codex is a .ps1 script, need to call via powershell
+    if sys.platform == "win32":
+        cmd = ["powershell", "-NoProfile", "-Command", "codex", "exec", "--json", "-"]
+    else:
+        cmd = ["codex", "exec", "--json", "-"]
     
     try:
         proc = subprocess.run(
@@ -61,6 +65,40 @@ def run_agent(prompt: str, timeout: int = 300, model: str = "sonnet") -> str:
     return "".join(response_parts).strip()
 
 
+def run_parallel_agents(prompts: list, max_parallel: int, timeout: int) -> list:
+    """
+    Run multiple agents in parallel using thread pool.
+    
+    Args:
+        prompts: List of prompts to run
+        max_parallel: Maximum concurrent agents
+        timeout: Timeout per agent in seconds
+    
+    Returns:
+        List of results in same order as prompts
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    
+    results = [None] * len(prompts)
+    
+    def run_one(idx: int, prompt: str):
+        try:
+            results[idx] = run_codex_agent(prompt, timeout)
+        except Exception as e:
+            results[idx] = f"ERROR: {e}"
+    
+    with ThreadPoolExecutor(max_workers=max_parallel) as executor:
+        futures = [executor.submit(run_one, i, p) for i, p in enumerate(prompts)]
+        for f in as_completed(futures):
+            f.result()  # Raise any exceptions
+    
+    return results
+
+
+# Alias for backward compatibility
+run_agent = run_codex_agent
+
+
 if __name__ == "__main__":
     # CLI usage: python run_codex_agent.py "prompt" [timeout] [model]
     if len(sys.argv) < 2:
@@ -72,7 +110,7 @@ if __name__ == "__main__":
     model = sys.argv[3] if len(sys.argv) > 3 else "sonnet"
     
     try:
-        result = run_agent(prompt, timeout, model)
+        result = run_codex_agent(prompt, timeout, model)
         print(result)
     except Exception as e:
         print(f"ERROR: {e}", file=sys.stderr)

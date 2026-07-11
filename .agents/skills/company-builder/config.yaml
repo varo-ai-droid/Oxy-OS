@@ -2,17 +2,15 @@
 # Edit to tune parallelism, agent counts, models, etc.
 
 # Global execution settings
-execution:
-  parallelism: 3                    # Max concurrent Codex processes (laptop GPU safe)
-  default_timeout_seconds: 300      # Per-agent timeout
-  retry_attempts: 2                 # Retries per agent on failure
-  retry_delay_seconds: 30           # Delay between retries
-  checkpoint_every_phase: true      # Save state.json after each phase
+codex:
+  max_parallel: 3                    # Max concurrent Codex processes (laptop GPU safe)
+  timeout_seconds: 300                 # Per-agent timeout
 
 # Phase configurations
 phases:
   pain_hunt:
     researchers: 10
+    problems_per_researcher: 5
     sources:
       - reddit
       - hackernews
@@ -24,9 +22,11 @@ phases:
       - google_play
       - quora
       - indiehackers
-    max_problems_per_researcher: 5
-    dedup_threshold: 0.7            # Similarity threshold for dedup
-    
+    max_parallel: 3
+    output:
+      raw: "pain-hunt/raw.md"
+      candidates: "pain-hunt/candidates.md"
+      
   tournament:
     judges: 5
     criteria:
@@ -38,7 +38,10 @@ phases:
       - incumbent_weakness
     top_k: 4
     final_judges: 3
-    
+    output:
+      scores: "tournament/scores.md"
+      winner: "tournament/winner.md"
+      
   business_design:
     researchers: 3
     focus_areas:
@@ -46,23 +49,36 @@ phases:
       - platform_apis
       - regulations
       - unit_economics
+    max_parallel: 3
+    output:
+      plan: "business-design/business-plan.md"
       
   brand:
     logo_iterations: 6
     domain_check: true
     domain_tlds: [".com", ".io", ".co"]
-    
+    output:
+      guide: "brand/brand-guide.md"
+      logo: "brand/logo.svg"
+      
   landing_page:
     include_demo: true
     include_pricing: true
     include_faq: true
-    
+    max_parallel: 3
+    output:
+      dir: "product"
+      
   launch_video:
     script_only: true               # No video generation without API keys
-    
+    output:
+      script: "videos/launch-script.md"
+      
   founder_video:
     script_only: true
-    
+    output:
+      script: "videos/founder-script.md"
+      
   red_team:
     skeptics: 6
     attack_vectors:
@@ -72,27 +88,12 @@ phases:
       - distribution
       - legal
       - retention
+    max_parallel: 3
+    output:
+      verdict: "red-team/verdict.md"
+      fixes: "red-team/fixes.md"
       
   recap:
     include_all_artifacts: true
-
-# Model preferences per phase type
-models:
-  research: "sonnet"       # Fast, good for research
-  creative: "sonnet"       # Brand, landing page
-  reasoning: "opus"        # Tournament, red team (if available)
-  default: "sonnet"
-
-# Output paths (relative to skill directory)
-output:
-  base: "output"
-  phases:
-    pain_hunt: "pain-hunt"
-    tournament: "tournament"
-    business_design: "business-design"
-    brand: "brand"
-    landing_page: "product"
-    launch_video: "videos"
-    founder_video: "videos"
-    red_team: "red-team"
-    recap: "recap"
+    output:
+      html: "recap/index.html"
