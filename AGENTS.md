@@ -31,6 +31,7 @@ All automations run on GitHub Actions free tier with git-based state persistence
 3. **alex-hormozi-mode** - `/alex` activates full Alex Hormozi persona for blunt, framework-heavy business advice. Use `/alex-exit` to deactivate. Wiki knowledge base at `projects/Alex-Hormozi-Coach/Hormozi-LLM-Wiki/wiki/`.
 4. **company-builder** - `/company-builder` runs 9-phase autonomous company building (pain hunt → tournament → business design → brand → product → videos → red team → recap). Output: `.agents/skills/company-builder/output/recap/index.html`
 5. **coding** - Behavioral guidelines to reduce common LLM coding mistakes (Karpathy-derived). Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
+6. **chess-coach** - `/chess-coach` analyzes all captured chess.com games and produces a personalized improvement report. Output: `chess/coach/output/latest-report.md`
 
 ## Automations To Build
 1. Deep research on a topic using specified sources
@@ -61,6 +62,12 @@ automations/
 └── spotify-transcripts/
     ├── extract_transcripts.py  # Spotify transcript extractor
     └── requirements.txt        # spotify_scraper dependency
+chess/                    # Chess coach (move capture + analysis)
+├── extension/           # Chrome extension (forked)
+├── server/              # Local receiver server
+├── games/               # Captured games (gitignored)
+├── coach/               # Analysis skill
+└── AGENTS.md            # Chess-specific instructions
 .agents/skills/
 ├── project-lint/
 ├── roast/

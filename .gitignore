@@ -24,3 +24,11 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Chess captured games (grows over time)
+chess/games/
+chess/coach/output/
+
+# Chess extension build output
+chess/extension/dist/
+chess/extension/node_modules/
