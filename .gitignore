@@ -5,18 +5,16 @@
 # Large reference documentation
 AI_OS_Video_Summary.md
 
+# Automation state files (grows over time, don't commit)
+message_ids.txt
+notified_videos.txt
+last_videos.json
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-venv/
-env/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.pytest_cache/
+*.pyc
 
 # VS Code
 .vscode/
