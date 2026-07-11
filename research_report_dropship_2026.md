@@ -1,2 +1,0 @@
-# Dropshipping/Ecommerce Evidence Report  
-"" 

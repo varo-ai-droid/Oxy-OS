@@ -1,16 +1,18 @@
-# Company Builder Skill Configuration
-# All paths relative to skill root: .agents/skills/company-builder/
+# Company Builder Configuration
+# Edit to tune parallelism, agent counts, models, etc.
 
-codex:
-  cli_path: "codex"          # assumes 'codex' is in PATH
-  default_model: "sonnet"    # or "opus" for heavier reasoning
-  timeout_seconds: 300       # per agent call
-  max_parallel: 3            # max concurrent codex processes (4060 laptop)
+# Global execution settings
+execution:
+  parallelism: 3                    # Max concurrent Codex processes (laptop GPU safe)
+  default_timeout_seconds: 300      # Per-agent timeout
+  retry_attempts: 2                 # Retries per agent on failure
+  retry_delay_seconds: 30           # Delay between retries
+  checkpoint_every_phase: true      # Save state.json after each phase
 
+# Phase configurations
 phases:
   pain_hunt:
     researchers: 10
-    max_parallel: 3
     sources:
       - reddit
       - hackernews
@@ -18,15 +20,13 @@ phases:
       - trustpilot
       - twitter
       - shopify_forums
-      - indiehackers
-      - quora
       - app_store
       - google_play
-    problems_per_researcher: 5
-    output:
-      raw: "output/pain-hunt/raw-problems.md"
-      candidates: "output/pain-hunt/candidates.md"
-
+      - quora
+      - indiehackers
+    max_problems_per_researcher: 5
+    dedup_threshold: 0.7            # Similarity threshold for dedup
+    
   tournament:
     judges: 5
     criteria:
@@ -38,10 +38,7 @@ phases:
       - incumbent_weakness
     top_k: 4
     final_judges: 3
-    output:
-      scores: "output/tournament/scores.md"
-      winner: "output/tournament/winner.md"
-
+    
   business_design:
     researchers: 3
     focus_areas:
@@ -49,28 +46,23 @@ phases:
       - platform_apis
       - regulations
       - unit_economics
-    output:
-      plan: "output/business-design/business-plan.md"
-
+      
   brand:
     logo_iterations: 6
     domain_check: true
-    output:
-      guide: "output/brand/brand-guide.md"
-      logo: "output/brand/logo.svg"
-
+    domain_tlds: [".com", ".io", ".co"]
+    
   landing_page:
-    output:
-      dir: "output/product/"
-
+    include_demo: true
+    include_pricing: true
+    include_faq: true
+    
   launch_video:
-    output:
-      script: "output/videos/launch-script.md"
-
+    script_only: true               # No video generation without API keys
+    
   founder_video:
-    output:
-      script: "output/videos/founder-script.md"
-
+    script_only: true
+    
   red_team:
     skeptics: 6
     attack_vectors:
@@ -80,18 +72,27 @@ phases:
       - distribution
       - legal
       - retention
-    output:
-      verdict: "output/red-team/verdict.md"
-      fixes: "output/red-team/fixes.md"
-
+      
   recap:
-    output:
-      html: "output/recap/index.html"
+    include_all_artifacts: true
 
-# External tools
-tools:
-  whois: "whois"              # CLI, no API key needed
-  dig: "dig"                  # fallback for domain check
+# Model preferences per phase type
+models:
+  research: "sonnet"       # Fast, good for research
+  creative: "sonnet"       # Brand, landing page
+  reasoning: "opus"        # Tournament, red team (if available)
+  default: "sonnet"
 
-# State
-state_file: "state.json"
+# Output paths (relative to skill directory)
+output:
+  base: "output"
+  phases:
+    pain_hunt: "pain-hunt"
+    tournament: "tournament"
+    business_design: "business-design"
+    brand: "brand"
+    landing_page: "product"
+    launch_video: "videos"
+    founder_video: "videos"
+    red_team: "red-team"
+    recap: "recap"
