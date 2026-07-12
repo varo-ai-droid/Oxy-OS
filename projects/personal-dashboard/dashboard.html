@@ -10,1040 +10,446 @@
 <style>
 :root {
   --bg: #000000;
-  --card-bg: #1C1C1E;
-  --card-border: #2C2C2E;
-  --text-primary: #FFFFFF;
-  --text-secondary: #8E8E93;
-  --text-tertiary: #48484A;
+  --card: #1C1C1E;
+  --border: #2C2C2E;
+  --text: #FFFFFF;
+  --muted: #8E8E93;
+  --dim: #48484A;
   --radius: 16px;
-  --radius-sm: 12px;
   --gap: 16px;
-  --gap-sm: 8px;
   --shadow: 0 8px 32px rgba(0,0,0,0.4);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-  --transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --transition-slow: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --fab-size: 56px;
-  --z-base: 1;
-  --z-widget: 10;
-  --z-wiggle: 20;
-  --z-modal: 100;
-  --z-toast: 200;
+  --ease: 200ms cubic-bezier(0.25,0.46,0.45,0.94);
+  --fab: 56px;
+  --accent: #007AFF;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  :root { --transition: 0ms; --transition-slow: 0ms; }
-}
+@media (prefers-reduced-motion: reduce) { :root { --ease: 0ms; } }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body { height: 100%; }
+html, body { height: 100%; background: var(--bg); }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text-primary);
+  font: 17px/1.47 -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.47;
-  font-size: 17px;
-  font-weight: 400;
   overflow-x: hidden;
 }
 
 #app { min-height: 100vh; display: flex; flex-direction: column; }
 
-/* Grid */
 .grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: var(--gap);
   padding: var(--gap);
-  padding-bottom: calc(var(--gap) + var(--fab-size) + 24px);
+  padding-bottom: calc(var(--gap) + var(--fab) + 24px);
   align-content: start;
 }
 
-@media (min-width: 480px) { .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
-@media (min-width: 900px) { .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } }
+@media (min-width: 480px)  { .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
+@media (min-width: 900px)  { .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } }
 @media (min-width: 1200px) { .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); } }
 
-.grid:empty::before {
-  content: '';
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
-
-/* Widget Card */
+/* Widget */
 .widget {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 20px;
-  position: relative;
-  z-index: var(--z-widget);
-  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
-  cursor: grab;
   min-height: 120px;
   display: flex;
   flex-direction: column;
+  cursor: grab;
+  transition: transform var(--ease), box-shadow var(--ease);
+  position: relative;
 }
 
-.widget:active { cursor: grabbing; }
+.widget.dragging { opacity: 0.5; transform: scale(1.02); box-shadow: 0 16px 48px rgba(0,0,0,0.5); z-index: 100; cursor: grabbing; }
+.widget.drag-over { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
 
-.widget.dragging {
-  opacity: 0.6;
-  transform: scale(1.02);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-  z-index: var(--z-widget) + 10;
-  cursor: grabbing;
+/* Wiggle */
+@keyframes wiggle { 0%,100% { transform: rotate(-0.5deg) scale(1.01); } 50% { transform: rotate(0.5deg) scale(1.01); } }
+.wiggle .widget { animation: wiggle 1.2s ease-in-out infinite; animation-delay: calc(var(--i) * 80ms); }
+
+.delete-btn {
+  position: absolute; top: -10px; right: -10px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,59,48,0.9); border: 2px solid var(--bg);
+  color: #fff; font: 600 16px/1 system-ui;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: scale(0.5); pointer-events: none;
+  transition: opacity var(--ease), transform var(--ease);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-
-.widget.drag-over { border-color: var(--widget-accent); box-shadow: 0 0 0 2px var(--widget-accent), var(--shadow); }
-
-/* Wiggle Mode */
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-0.5deg) scale(1.01); }
-  50% { transform: rotate(0.5deg) scale(1.01); }
-}
-
-.wiggle-mode .widget {
-  animation: wiggle 1.2s ease-in-out infinite;
-  animation-delay: calc(var(--wiggle-delay, 0) * 80ms);
-}
-
-.wiggle-mode .widget::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: calc(var(--radius) + 4px);
-  background: linear-gradient(135deg, var(--widget-accent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition);
-  z-index: -1;
-}
-
-.wiggle-mode .widget:hover::before { opacity: 0.3; }
-
-/* Delete Button (wiggle mode) */
-.widget .delete-btn {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 59, 48, 0.9);
-  border: 2px solid var(--bg);
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity var(--transition), transform var(--transition);
-  z-index: var(--z-wiggle);
-  box-shadow: var(--shadow-sm);
-}
-
-.wiggle-mode .widget .delete-btn {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.widget .delete-btn:hover { background: #FF3B30; transform: scale(1.1); }
-
-/* Widget Content */
-.widget-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
+.wiggle .delete-btn { opacity: 1; transform: scale(1); pointer-events: auto; }
+.delete-btn:hover { background: #FF3B30; }
 
 .widget-title {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--widget-accent);
+  font: 600 13px/1 system-ui; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--accent); margin-bottom: 12px;
 }
 
-.widget-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.widget-body { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--dim); font-size: 15px; }
 
-.widget-placeholder {
-  color: var(--text-tertiary);
-  font-size: 15px;
-  font-weight: 400;
-}
-
-/* Empty State Card */
+/* Empty state */
 .empty-card {
   grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 280px;
   background: transparent;
-  border: 2px dashed var(--card-border);
+  border: 2px dashed var(--border);
   border-radius: var(--radius);
-  padding: 48px 24px;
-  cursor: pointer;
-  transition: border-color var(--transition), background var(--transition);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 48px 24px; cursor: pointer;
+  transition: border-color var(--ease), background var(--ease);
 }
-
-.empty-card:hover { border-color: var(--text-tertiary); background: rgba(255,255,255,0.02); }
-
-.empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
-
-.empty-text { font-size: 17px; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
-
-.empty-hint { font-size: 13px; color: var(--text-tertiary); }
+.empty-card:hover { border-color: var(--dim); background: rgba(255,255,255,0.02); }
+.empty-icon { font-size: 48px; opacity: 0.5; margin-bottom: 16px; }
+.empty-text { font: 500 17px system-ui; color: var(--muted); margin-bottom: 8px; }
+.empty-hint { font-size: 13px; color: var(--dim); }
 
 /* FAB */
 .fab {
-  position: fixed;
-  right: var(--gap);
-  bottom: var(--gap);
-  width: var(--fab-size);
-  height: var(--fab-size);
-  border-radius: 50%;
-  background: var(--text-primary);
-  color: var(--bg);
-  border: none;
-  font-size: 24px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  z-index: 50;
-  transition: transform var(--transition), background var(--transition);
+  position: fixed; right: var(--gap); bottom: var(--gap);
+  width: var(--fab); height: var(--fab); border-radius: 50%;
+  background: var(--text); color: var(--bg); border: none;
+  font-size: 24px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: var(--shadow); z-index: 50;
+  transition: transform var(--ease), background var(--ease);
 }
-
-.fab:hover { background: var(--text-secondary); }
-
+.fab:hover { background: var(--muted); }
 .fab:active { transform: scale(0.95); }
+.fab.done { background: #FF3B30; color: #fff; }
 
-.fab.wiggle-active { background: #FF3B30; color: white; }
-
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: var(--z-modal);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: var(--gap);
-  opacity: 0;
-  transition: opacity var(--transition);
+/* Modal */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+  z-index: 100; display: none; align-items: center; justify-content: center;
+  padding: var(--gap); opacity: 0; transition: opacity var(--ease);
 }
-
-.modal-overlay.open { display: flex; opacity: 1; }
+.overlay.open { display: flex; opacity: 1; }
 
 .modal {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 24px;
-  max-width: 480px;
-  width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  transform: scale(0.95) translateY(20px);
-  transition: transform var(--transition-slow);
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 24px;
+  max-width: 480px; width: 100%; max-height: 85vh; overflow-y: auto;
+  transform: scale(0.95) translateY(20px); transition: transform 300ms var(--ease);
 }
+.overlay.open .modal { transform: scale(1) translateY(0); }
 
-.modal-overlay.open .modal { transform: scale(1) translateY(0); }
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.modal-title { font-size: 20px; font-weight: 600; }
-
+.modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.modal-title { font: 600 20px system-ui; }
 .modal-close {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition), color var(--transition);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: transparent; border: none; color: var(--muted);
+  font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--ease), color var(--ease);
 }
+.modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
 
-.modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
-
-/* Widget Picker Grid */
-.widget-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-
+.picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
 .picker-item {
-  background: var(--bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-sm);
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-  position: relative;
-  overflow: hidden;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px;
+  cursor: pointer; transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+  position: relative; overflow: hidden;
 }
-
-.picker-item::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
+.picker-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); opacity: 0; transition: opacity var(--ease); }
 .picker-item:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
-
 .picker-item:hover::before { opacity: 1; }
-
 .picker-icon { font-size: 28px; }
+.picker-name { font: 500 15px system-ui; text-align: center; }
+.picker-size { font: 600 11px system-ui; color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; }
 
-.picker-name { font-size: 15px; font-weight: 500; text-align: center; }
-
-.picker-size { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.3px; }
-
-/* Settings Modal */
-.settings-section { margin-bottom: 24px; }
-
-.settings-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); margin-bottom: 12px; }
-
+/* Settings in modal */
 .settings-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 14px 16px;
-  background: var(--bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-sm);
-  color: var(--text-primary);
-  font-size: 15px;
-  font-weight: 400;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition);
-  margin-bottom: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 14px 16px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+  color: var(--text); font: 15px system-ui; cursor: pointer;
+  margin-bottom: 8px; transition: background var(--ease), border-color var(--ease);
 }
-
 .settings-btn:last-child { margin-bottom: 0; }
-
-.settings-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--text-tertiary); }
-
+.settings-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--dim); }
 .settings-btn.danger { color: #FF3B30; }
-
 .settings-btn.danger:hover { background: rgba(255,59,48,0.1); border-color: #FF3B30; }
-
-.settings-btn kbd {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-family: inherit;
-  color: var(--text-secondary);
-}
+.section-title { font: 600 13px system-ui; text-transform: uppercase; letter-spacing: 0.5px; color: var(--dim); margin: 24px 0 12px; }
+.section-title:first-child { margin-top: 0; }
 
 /* Toast */
-.toast-container {
-  position: fixed;
-  bottom: calc(var(--gap) + var(--fab-size) + 16px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: var(--z-toast);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  pointer-events: none;
-}
-
-.toast {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-sm);
-  padding: 12px 20px;
-  box-shadow: var(--shadow);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-primary);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: toast-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  pointer-events: auto;
-}
-
+.toast { position: fixed; left: 50%; bottom: calc(var(--gap) + var(--fab) + 16px); transform: translateX(-50%) translateY(20px);
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 20px; box-shadow: var(--shadow); font: 500 14px system-ui;
+  opacity: 0; z-index: 200; pointer-events: none;
+  animation: toast-in 0.3s var(--ease) forwards; }
 .toast.success { border-left: 3px solid #34C759; }
-
 .toast.error { border-left: 3px solid #FF3B30; }
+@keyframes toast-in { to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+.toast.hide { animation: toast-out 0.2s ease forwards; }
+@keyframes toast-out { to { opacity: 0; transform: translateX(-50%) translateY(-10px); } }
 
-@keyframes toast-in { to { opacity: 1; transform: translateY(0); } }
-
-.toast.removing { animation: toast-out 0.2s ease forwards; }
-
-@keyframes toast-out { to { opacity: 0; transform: translateY(-10px); } }
-
-/* Drag Placeholder */
-.drag-placeholder {
-  background: transparent;
-  border: 2px dashed var(--text-tertiary);
-  border-radius: var(--radius);
-  opacity: 0.5;
-}
-
-/* Focus Visible */
-:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--text-tertiary); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  .wiggle-mode .widget { animation: none; }
-  * { transition-duration: 0ms !important; animation-duration: 0ms !important; }
-}
+/* Focus */
+:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 </style>
 </head>
 <body>
 <div id="app">
   <div class="grid" id="grid" role="list" aria-label="Widget grid"></div>
-  <button class="fab" id="fab" aria-label="Add widget" title="Add widget (double-click for wiggle mode)">+</button>
+  <button class="fab" id="fab" aria-label="Add widget" title="Click: add widget • Double-click: wiggle mode">+</button>
 </div>
 
-<div class="modal-overlay" id="widgetPickerModal" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+<div class="overlay" id="pickerModal" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
   <div class="modal">
-    <div class="modal-header">
+    <div class="modal-head">
       <h2 class="modal-title" id="pickerTitle">Add Widget</h2>
       <button class="modal-close" id="pickerClose" aria-label="Close">&times;</button>
     </div>
-    <div class="widget-picker" id="widgetPicker"></div>
+    <div class="picker-grid" id="pickerGrid"></div>
   </div>
 </div>
-
-<div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
-  <div class="modal">
-    <div class="modal-header">
-      <h2 class="modal-title" id="settingsTitle">Settings</h2>
-      <button class="modal-close" id="settingsClose" aria-label="Close">&times;</button>
-    </div>
-    <div class="settings-section">
-      <div class="settings-title">Data</div>
-      <button class="settings-btn" id="exportBtn">Export Dashboard <kbd>⌘E</kbd></button>
-      <button class="settings-btn" id="importBtn">Import Dashboard <kbd>⌘I</kbd></button>
-      <input type="file" id="importFile" accept=".json" style="display:none">
-      <button class="settings-btn danger" id="clearBtn">Clear All Data</button>
-    </div>
-    <div class="settings-section">
-      <div class="settings-title">Info</div>
-      <button class="settings-btn" id="versionBtn">Version 1.0.0</button>
-    </div>
-  </div>
-</div>
-
-<div class="toast-container" id="toastContainer" aria-live="polite"></div>
-
-<input type="file" id="importFileInput" accept=".json" style="display:none">
 
 <script>
-// ============================================
-// CONSTANTS & CONFIG
-// ============================================
 const STORAGE_KEY = 'oxy-dashboard-v1';
-const STORAGE_VERSION = 1;
-const ACCENT_PALETTE = [
-  '#007AFF', '#34C759', '#FF9F0A', '#FF3B30',
-  '#AF52DE', '#FF2D92', '#5AC8FA', '#5856D6'
+const ACCENTS = ['#007AFF','#34C759','#FF9F0A','#FF3B30','#AF52DE','#FF2D92','#5AC8FA','#5856D6'];
+
+const WIDGETS = [
+  {id:'clock', name:'Clock', icon:'🕐', size:'1×1', desc:'Time, date, timezone'},
+  {id:'weather', name:'Weather', icon:'☀️', size:'1×2', desc:'Current conditions, forecast'},
+  {id:'calendar', name:'Calendar', icon:'📅', size:'2×2', desc:'Events, reminders'},
+  {id:'notes', name:'Notes', icon:'📝', size:'2×2', desc:'Quick notes, markdown'},
+  {id:'habits', name:'Habits', icon:'🔥', size:'2×1', desc:'Streaks, daily tracking'},
+  {id:'finance', name:'Finance', icon:'💰', size:'1×2', desc:'Expenses, budgets'},
+  {id:'news', name:'News', icon:'📰', size:'2×2', desc:'RSS feeds, headlines'},
+  {id:'timer', name:'Timer', icon:'⏱️', size:'1×1', desc:'Pomodoro, stopwatch'},
 ];
 
-const WIDGET_TYPES = [
-  { id: 'clock', name: 'Clock', icon: '🕐', defaultSize: { rows: 1, cols: 1 }, desc: 'Time, date, timezone' },
-  { id: 'weather', name: 'Weather', icon: '☀️', defaultSize: { rows: 1, cols: 2 }, desc: 'Current conditions, forecast' },
-  { id: 'calendar', name: 'Calendar', icon: '📅', defaultSize: { rows: 2, cols: 2 }, desc: 'Events, reminders' },
-  { id: 'notes', name: 'Notes', icon: '📝', defaultSize: { rows: 2, cols: 2 }, desc: 'Quick notes, markdown' },
-  { id: 'habits', name: 'Habits', icon: '🔥', defaultSize: { rows: 2, cols: 1 }, desc: 'Streaks, daily tracking' },
-  { id: 'finance', name: 'Finance', icon: '💰', defaultSize: { rows: 1, cols: 2 }, desc: 'Expenses, budgets' },
-  { id: 'news', name: 'News', icon: '📰', defaultSize: { rows: 2, cols: 2 }, desc: 'RSS feeds, headlines' },
-  { id: 'timer', name: 'Timer', icon: '⏱️', defaultSize: { rows: 1, cols: 1 }, desc: 'Pomodoro, stopwatch' },
-];
-
-// ============================================
-// UTILITIES
-// ============================================
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-const uuid = () => crypto.randomUUID();
+// --- Utils ---
+const $ = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const uid = () => crypto.randomUUID();
 const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
-const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
-function showToast(message, type = 'success') {
-  const container = $('#toastContainer');
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.textContent = message;
-  container.appendChild(toast);
-  setTimeout(() => { toast.classList.add('removing'); setTimeout(() => toast.remove(), 200); }, 3000);
+function toast(msg, type='success') {
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => { el.classList.add('hide'); setTimeout(() => el.remove(), 200); }, 2500);
 }
 
-function saveAsJSON(data, filename) {
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
+function saveJSON(data, name) {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], {type:'application/json'}));
   const a = document.createElement('a');
-  a.href = url; a.download = filename; a.click();
+  a.href = url; a.download = name; a.click();
   URL.revokeObjectURL(url);
 }
 
-// ============================================
-// STATE MANAGEMENT
-// ============================================
-class DashboardState {
-  constructor() {
-    this.widgets = [];
-    this.grid = { cols: 2, gap: 16 };
-    this.settings = { wiggleMode: false, theme: 'dark' };
-    this.nextAccentIndex = 0;
-    this.load();
-  }
-
+// --- State ---
+const state = {
+  widgets: [],
+  nextAccent: 0,
+  wiggle: false,
   load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
-      const data = JSON.parse(raw);
-      if (data.version !== STORAGE_VERSION) this.migrate(data);
-      else {
-        this.widgets = data.widgets || [];
-        this.grid = data.grid || this.grid;
-        this.settings = data.settings || this.settings;
-        this.nextAccentIndex = data.nextAccentIndex || 0;
-      }
-      this.reorderWidgets();
-    } catch (e) { console.error('Load failed:', e); this.reset(); }
-  }
-
-  migrate(data) {
-    // Future migration logic
-    this.widgets = data.widgets || [];
-    this.grid = data.grid || this.grid;
-    this.settings = data.settings || this.settings;
-    this.nextAccentIndex = data.nextAccentIndex || 0;
-  }
-
+      const d = JSON.parse(raw);
+      this.widgets = d.widgets || [];
+      this.nextAccent = d.nextAccent || 0;
+      this.wiggle = d.wiggle || false;
+      this.widgets.sort((a,b) => (a.order||0) - (b.order||0));
+    } catch { this.reset(); }
+  },
   save() {
-    const data = {
-      version: STORAGE_VERSION,
-      widgets: this.widgets,
-      grid: this.grid,
-      settings: this.settings,
-      nextAccentIndex: this.nextAccentIndex,
-      updatedAt: Date.now()
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  }
-
-  debouncedSave = debounce(() => this.save(), 300);
-
-  reset() {
-    this.widgets = [];
-    this.grid = { cols: 2, gap: 16 };
-    this.settings = { wiggleMode: false, theme: 'dark' };
-    this.nextAccentIndex = 0;
-    this.save();
-  }
-
-  export() {
-    return {
-      version: STORAGE_VERSION,
-      widgets: this.widgets,
-      grid: this.grid,
-      settings: this.settings,
-      nextAccentIndex: this.nextAccentIndex,
-      exportedAt: new Date().toISOString()
-    };
-  }
-
-  import(data) {
-    if (!data || data.version !== STORAGE_VERSION) throw new Error('Invalid or outdated dashboard data');
-    this.widgets = data.widgets || [];
-    this.grid = data.grid || this.grid;
-    this.settings = data.settings || this.settings;
-    this.nextAccentIndex = data.nextAccentIndex || 0;
-    this.reorderWidgets();
-    this.save();
-  }
-
-  reorderWidgets() {
-    this.widgets.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-  }
-
-  getNextAccent() {
-    const color = ACCENT_PALETTE[this.nextAccentIndex % ACCENT_PALETTE.length];
-    this.nextAccentIndex++;
-    this.debouncedSave();
-    return color;
-  }
-
-  addWidget(typeId, position = {}) {
-    const type = WIDGET_TYPES.find(t => t.id === typeId);
-    if (!type) return null;
-    const widget = {
-      id: uuid(),
-      type: typeId,
-      position: { row: 0, col: 0, rowSpan: type.defaultSize.rows, colSpan: type.defaultSize.cols, ...position },
-      config: {},
-      accentColor: this.getNextAccent(),
-      order: this.widgets.length
-    };
-    this.widgets.push(widget);
-    this.debouncedSave();
-    return widget;
-  }
-
-  removeWidget(id) {
-    this.widgets = this.widgets.filter(w => w.id !== id);
-    this.debouncedSave();
-  }
-
-  updateWidget(id, updates) {
-    const idx = this.widgets.findIndex(w => w.id === id);
-    if (idx === -1) return;
-    this.widgets[idx] = { ...this.widgets[idx], ...updates };
-    this.debouncedSave();
-  }
-
-  reorderWidgetsByOrder(newOrder) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: 1, widgets: this.widgets, nextAccent: this.nextAccent, wiggle: this.wiggle, updatedAt: Date.now()
+    }));
+  },
+  debouncedSave: debounce(function() { this.save(); }, 300),
+  reset() { this.widgets = []; this.nextAccent = 0; this.wiggle = false; this.save(); },
+  add(typeId) {
+    const t = WIDGETS.find(w => w.id === typeId); if (!t) return;
+    const w = { id: uid(), type: typeId, config: {}, accent: ACCENTS[this.nextAccent++ % ACCENTS.length], order: this.widgets.length };
+    this.widgets.push(w); this.debouncedSave(); return w;
+  },
+  remove(id) { this.widgets = this.widgets.filter(w => w.id !== id); this.debouncedSave(); },
+  reorder(ids) {
     const map = new Map(this.widgets.map(w => [w.id, w]));
-    this.widgets = newOrder.map(id => map.get(id)).filter(Boolean);
-    this.widgets.forEach((w, i) => w.order = i);
+    this.widgets = ids.map(id => map.get(id)).filter(Boolean);
+    this.widgets.forEach((w,i) => w.order = i);
     this.debouncedSave();
+  },
+  toggleWiggle() { this.wiggle = !this.wiggle; this.debouncedSave(); return this.wiggle; },
+  export() { return { version: 1, widgets: this.widgets, nextAccent: this.nextAccent, exportedAt: new Date().toISOString() }; },
+  import(data) {
+    if (!data || data.version !== 1) throw new Error('Invalid file');
+    this.widgets = data.widgets || [];
+    this.nextAccent = data.nextAccent || 0;
+    this.widgets.sort((a,b) => (a.order||0) - (b.order||0));
+    this.save();
   }
+};
 
-  toggleWiggleMode() {
-    this.settings.wiggleMode = !this.settings.wiggleMode;
-    this.debouncedSave();
-    return this.settings.wiggleMode;
+state.load();
+
+// --- UI ---
+const grid = $('#grid'), fab = $('#fab'), pickerModal = $('#pickerModal'), pickerGrid = $('#pickerGrid');
+
+function render() {
+  grid.innerHTML = '';
+  if (state.widgets.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-card" onclick="app.openPicker()">
+        <div class="empty-icon">+</div>
+        <div class="empty-text">Add Your First Widget</div>
+        <div class="empty-hint">Click the + button or this card</div>
+      </div>`;
+    return;
   }
-
-  setWiggleMode(enabled) {
-    this.settings.wiggleMode = enabled;
-    this.debouncedSave();
-  }
-}
-
-// ============================================
-// WIDGET BASE CLASS (for V2)
-// ============================================
-class BaseWidget {
-  constructor(widgetData, state) {
-    this.data = widgetData;
-    this.state = state;
-    this.element = null;
-  }
-
-  render() { return `<div class="widget-placeholder">${this.constructor.name} - V2 Widget</div>`; }
-
-  mount(element) { this.element = element; }
-
-  unmount() { this.element = null; }
-
-  getDefaultConfig() { return {}; }
-
-  validateConfig(config) { return config; }
-
-  saveConfig(config) {
-    this.data.config = this.validateConfig(config);
-    this.state.updateWidget(this.data.id, { config: this.data.config });
-  }
-}
-
-// ============================================
-// DASHBOARD CONTROLLER
-// ============================================
-class Dashboard {
-  constructor() {
-    this.state = new DashboardState();
-    this.gridEl = $('#grid');
-    this.fab = $('#fab');
-    this.pickerModal = $('#widgetPickerModal');
-    this.settingsModal = $('#settingsModal');
-    this.pickerGrid = $('#widgetPicker');
-    this.draggedWidget = null;
-    this.dragPlaceholder = null;
-    this.wiggleTimeout = null;
-    this.lastTap = 0;
-
-    this.init();
-  }
-
-  init() {
-    this.renderGrid();
-    this.bindEvents();
-    this.bindKeyboard();
-    this.updateWiggleUI();
-  }
-
-  bindEvents() {
-    // FAB - click to add, double-click for wiggle
-    this.fab.addEventListener('click', (e) => {
-      const now = Date.now();
-      if (now - this.lastTap < 300) {
-        e.preventDefault();
-        this.toggleWiggleMode();
-      } else {
-        this.openWidgetPicker();
-      }
-      this.lastTap = now;
-    });
-
-    // FAB long press for wiggle
-    let longPressTimer;
-    this.fab.addEventListener('pointerdown', () => {
-      longPressTimer = setTimeout(() => this.toggleWiggleMode(), 500);
-    });
-    ['pointerup', 'pointerleave', 'pointercancel'].forEach(evt =>
-      this.fab.addEventListener(evt, () => clearTimeout(longPressTimer))
-    );
-
-    // Modal close buttons
-    $('#pickerClose').onclick = () => this.closeModal(this.pickerModal);
-    $('#settingsClose').onclick = () => this.closeModal(this.settingsModal);
-
-    // Click overlay to close
-    [this.pickerModal, this.settingsModal].forEach(m =>
-      m.addEventListener('click', (e) => { if (e.target === m) this.closeModal(m); })
-    );
-
-    // Settings buttons
-    $('#exportBtn').onclick = () => this.exportDashboard();
-    $('#importBtn').onclick = () => $('#importFileInput').click();
-    $('#importFileInput').onchange = (e) => this.importDashboard(e.target.files[0]);
-    $('#clearBtn').onclick = () => this.clearAllData();
-
-    // Keyboard shortcuts for modals
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (this.pickerModal.classList.contains('open')) this.closeModal(this.pickerModal);
-        else if (this.settingsModal.classList.contains('open')) this.closeModal(this.settingsModal);
-      }
-    });
-  }
-
-  bindKeyboard() {
-    document.addEventListener('keydown', (e) => {
-      if (e.metaKey || e.ctrlKey) {
-        if (e.key === 'e') { e.preventDefault(); this.exportDashboard(); }
-        if (e.key === 'i') { e.preventDefault(); $('#importFileInput').click(); }
-      }
-      if (e.key === ' ' && e.target === this.fab) { e.preventDefault(); this.toggleWiggleMode(); }
-    });
-  }
-
-  // ========== RENDERING ==========
-  renderGrid() {
-    this.gridEl.innerHTML = '';
-
-    if (this.state.widgets.length === 0) {
-      this.renderEmptyState();
-      return;
-    }
-
-    this.state.widgets.forEach((widget, index) => {
-      const el = this.createWidgetElement(widget, index);
-      this.gridEl.appendChild(el);
-      this.bindWidgetDrag(el, widget);
-    });
-  }
-
-  renderEmptyState() {
-    const card = document.createElement('div');
-    card.className = 'empty-card';
-    card.innerHTML = `
-      <div class="empty-icon">+</div>
-      <div class="empty-text">Add Your First Widget</div>
-      <div class="empty-hint">Click the + button or this card</div>
-    `;
-    card.onclick = () => this.openWidgetPicker();
-    this.gridEl.appendChild(card);
-  }
-
-  createWidgetElement(widget, index) {
-    const type = WIDGET_TYPES.find(t => t.id === widget.type);
+  state.widgets.forEach((w, i) => {
+    const t = WIDGETS.find(x => x.id === w.type);
     const el = document.createElement('div');
     el.className = 'widget';
-    el.dataset.widgetId = widget.id;
-    el.dataset.widgetType = widget.type;
-    el.draggable = true;
-    el.style.setProperty('--widget-accent', widget.accentColor);
-    el.style.setProperty('--wiggle-delay', index);
-
-    const accentStyle = `color: ${widget.accentColor}`;
-
+    el.dataset.id = w.id;
+    el.style.setProperty('--accent', w.accent);
+    el.style.setProperty('--i', i);
+    el.draggable = state.wiggle;
     el.innerHTML = `
-      <button class="delete-btn" aria-label="Delete ${type?.name || 'widget'}" title="Delete">&times;</button>
-      <div class="widget-header">
-        <span class="widget-title" style="${accentStyle}">${type?.name || widget.type}</span>
-      </div>
-      <div class="widget-content">
-        <div class="widget-placeholder">${type?.desc || 'Widget content coming in V2'}</div>
-      </div>
+      <button class="delete-btn" aria-label="Delete ${t?.name}">×</button>
+      <div class="widget-title" style="color:${w.accent}">${t?.name || w.type}</div>
+      <div class="widget-body">${t?.desc || 'Widget content in V2'}</div>
     `;
-
-    // Delete button
-    el.querySelector('.delete-btn').onclick = (e) => {
-      e.stopPropagation();
-      this.deleteWidget(widget.id);
-    };
-
-    return el;
-  }
-
-  renderWidgetPicker() {
-    this.pickerGrid.innerHTML = '';
-    WIDGET_TYPES.forEach((type, index) => {
-      const item = document.createElement('div');
-      item.className = 'picker-item';
-      item.style.setProperty('--accent', ACCENT_PALETTE[index % ACCENT_PALETTE.length]);
-      item.dataset.type = type.id;
-      item.innerHTML = `
-        <div class="picker-icon">${type.icon}</div>
-        <div class="picker-name">${type.name}</div>
-        <div class="picker-size">${type.defaultSize.rows}×${type.defaultSize.cols}</div>
-      `;
-      item.onclick = () => this.addWidgetFromPicker(type.id);
-      this.pickerGrid.appendChild(item);
-    });
-  }
-
-  // ========== WIDGET OPERATIONS ==========
-  addWidgetFromPicker(typeId) {
-    const widget = this.state.addWidget(typeId);
-    if (widget) {
-      this.closeModal(this.pickerModal);
-      this.renderGrid();
-      showToast(`Added ${WIDGET_TYPES.find(t => t.id === typeId)?.name} widget`);
-    }
-  }
-
-  deleteWidget(id) {
-    if (!confirm('Delete this widget?')) return;
-    this.state.removeWidget(id);
-    this.renderGrid();
-    showToast('Widget deleted');
-  }
-
-  toggleWiggleMode() {
-    const enabled = this.state.toggleWiggleMode();
-    this.updateWiggleUI();
-    showToast(enabled ? 'Wiggle mode on — drag to reorder, tap ✕ to delete' : 'Wiggle mode off');
-  }
-
-  updateWiggleUI() {
-    const wiggle = this.state.settings.wiggleMode;
-    document.body.classList.toggle('wiggle-mode', wiggle);
-    this.fab.classList.toggle('wiggle-active', wiggle);
-    this.fab.textContent = wiggle ? '✓' : '+';
-    this.fab.setAttribute('aria-label', wiggle ? 'Done' : 'Add widget');
-    $$('.widget').forEach(w => w.draggable = wiggle);
-  }
-
-  // ========== DRAG & DROP (Pointer Events) ==========
-  bindWidgetDrag(el, widget) {
-    let startX, startY, startRect, placeholder, isDragging = false;
-    const dragThreshold = 8;
-
-    const onPointerMove = (e) => {
-      if (!isDragging) {
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        if (Math.hypot(dx, dy) > dragThreshold) this.startDrag(el, widget, e);
-        return;
-      }
-      this.dragMove(e);
-    };
-
-    const onPointerUp = () => {
-      document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerup', onPointerUp);
-      if (isDragging) this.endDrag();
-      isDragging = false;
-      el.releasePointerCapture(e.pointerId);
-    };
-
-    el.addEventListener('pointerdown', (e) => {
-      if (e.button !== 0) return;
-      if (e.target.closest('.delete-btn')) return;
-      if (!this.state.settings.wiggleMode) return;
-
-      startX = e.clientX;
-      startY = e.clientY;
-      startRect = el.getBoundingClientRect();
-      el.setPointerCapture(e.pointerId);
-      document.addEventListener('pointermove', onPointerMove);
-      document.addEventListener('pointerup', onPointerUp);
-    });
-  }
-
-  startDrag(el, widget, e) {
-    this.draggedWidget = widget;
-    isDragging = true;
-    el.classList.add('dragging');
-
-    // Create placeholder
-    this.dragPlaceholder = document.createElement('div');
-    this.dragPlaceholder.className = 'drag-placeholder widget';
-    this.dragPlaceholder.style.cssText = `
-      height: ${el.offsetHeight}px;
-      grid-column: ${el.style.gridColumn || 'auto'};
-      grid-row: ${el.style.gridRow || 'auto'};
-    `;
-    el.parentNode.insertBefore(this.dragPlaceholder, el);
-    el.style.position = 'fixed';
-    el.style.left = startRect.left + 'px';
-    el.style.top = startRect.top + 'px';
-    el.style.width = startRect.width + 'px';
-    el.style.zIndex = '1000';
-    el.style.pointerEvents = 'none';
-  }
-
-  dragMove(e) {
-    if (!this.draggedWidget || !this.dragPlaceholder) return;
-    const el = this.gridEl.querySelector(`[data-widget-id="${this.draggedWidget.id}"]`);
-    if (!el) return;
-
-    el.style.left = (e.clientX - startRect.width / 2) + 'px';
-    el.style.top = (e.clientY - startRect.height / 2) + 'px';
-
-    // Find drop target
-    const target = this.getDropTarget(e.clientX, e.clientY);
-    if (target && target !== this.dragPlaceholder) {
-      const rect = target.getBoundingClientRect();
-      const midY = rect.top + rect.height / 2;
-      if (e.clientY < midY) target.parentNode.insertBefore(this.dragPlaceholder, target);
-      else target.parentNode.insertBefore(this.dragPlaceholder, target.nextSibling);
-    }
-  }
-
-  getDropTarget(x, y) {
-    const elements = document.elementsFromPoint(x, y);
-    return elements.find(el => el.classList.contains('widget') && !el.classList.contains('dragging') && !el.classList.contains('drag-placeholder'));
-  }
-
-  endDrag() {
-    if (!this.draggedWidget || !this.dragPlaceholder) return;
-
-    const el = this.gridEl.querySelector(`[data-widget-id="${this.draggedWidget.id}"]`);
-    if (el) {
-      el.classList.remove('dragging');
-      el.style.position = '';
-      el.style.left = '';
-      el.style.top = '';
-      el.style.width = '';
-      el.style.zIndex = '';
-      el.style.pointerEvents = '';
-    }
-
-    // Get new order from DOM
-    const newOrder = $$('.widget:not(.drag-placeholder)').map(w => w.dataset.widgetId);
-    this.state.reorderWidgetsByOrder(newOrder);
-
-    this.dragPlaceholder.remove();
-    this.dragPlaceholder = null;
-    this.draggedWidget = null;
-    this.renderGrid(); // Re-render to clean up positions
-  }
-
-  // ========== MODALS ==========
-  openWidgetPicker() {
-    this.renderWidgetPicker();
-    this.pickerModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  openSettings() {
-    this.settingsModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeModal(modal) {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // ========== DATA OPERATIONS ==========
-  exportDashboard() {
-    const data = this.state.export();
-    saveAsJSON(data, `oxy-dashboard-${new Date().toISOString().split('T')[0]}.json`);
-    showToast('Dashboard exported');
-    this.closeModal(this.settingsModal);
-  }
-
-  importDashboard(file) {
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const data = JSON.parse(e.target.result);
-        this.state.import(data);
-        this.renderGrid();
-        showToast('Dashboard imported successfully');
-        this.closeModal(this.settingsModal);
-      } catch (err) {
-        showToast('Import failed: ' + err.message, 'error');
-      }
-    };
-    reader.readAsText(file);
-  }
-
-  clearAllData() {
-    if (!confirm('Delete ALL dashboard data? This cannot be undone.')) return;
-    this.state.reset();
-    this.renderGrid();
-    showToast('All data cleared');
-    this.closeModal(this.settingsModal);
-  }
+    el.querySelector('.delete-btn').onclick = e => { e.stopPropagation(); app.delete(w.id); };
+    grid.appendChild(el);
+    bindDrag(el, w);
+  });
 }
 
-// ============================================
-// INIT
-// ============================================
-let dashboard;
-document.addEventListener('DOMContentLoaded', () => {
-  dashboard = new Dashboard();
+function renderPicker() {
+  pickerGrid.innerHTML = '';
+  WIDGETS.forEach((t, i) => {
+    const el = document.createElement('div');
+    el.className = 'picker-item';
+    el.style.setProperty('--accent', ACCENTS[i % ACCENTS.length]);
+    el.innerHTML = `<div class="picker-icon">${t.icon}</div><div class="picker-name">${t.name}</div><div class="picker-size">${t.size}</div>`;
+    el.onclick = () => app.addWidget(t.id);
+    pickerGrid.appendChild(el);
+  });
+}
+
+// --- Drag (native HTML5 DnD - simpler than pointer events) ---
+let dragEl = null;
+function bindDrag(el, widget) {
+  el.addEventListener('dragstart', e => {
+    if (!state.wiggle) return e.preventDefault();
+    dragEl = widget;
+    el.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+  });
+  el.addEventListener('dragend', e => {
+    el.classList.remove('dragging');
+    dragEl = null;
+  });
+  el.addEventListener('dragover', e => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; el.classList.add('drag-over'); });
+  el.addEventListener('dragleave', e => { if (!el.contains(e.relatedTarget)) el.classList.remove('drag-over'); });
+  el.addEventListener('drop', e => {
+    e.preventDefault();
+    el.classList.remove('drag-over');
+    const target = e.target.closest('.widget');
+    if (target && target !== el) {
+      const ids = $$('.widget').map(x => x.dataset.id);
+      const from = ids.indexOf(dragEl.id), to = ids.indexOf(target.dataset.id);
+      ids.splice(from, 1); ids.splice(to, 0, dragEl.id);
+      state.reorder(ids); render();
+    }
+  });
+}
+
+// --- App controller ---
+const app = {
+  openPicker() { renderPicker(); pickerModal.classList.add('open'); document.body.style.overflow = 'hidden'; },
+  closePicker() { pickerModal.classList.remove('open'); document.body.style.overflow = ''; },
+  addWidget(typeId) {
+    state.add(typeId); this.closePicker(); render(); toast(`Added ${WIDGETS.find(w=>w.id===typeId)?.name} widget`);
+  },
+  delete(id) {
+    if (!confirm('Delete this widget?')) return;
+    state.remove(id); render(); toast('Widget deleted');
+  },
+  toggleWiggle() {
+    const on = state.toggleWiggle();
+    document.body.classList.toggle('wiggle', on);
+    fab.classList.toggle('done', on);
+    fab.textContent = on ? '✓' : '+';
+    fab.setAttribute('aria-label', on ? 'Done' : 'Add widget');
+    $$('.widget').forEach(w => w.draggable = on);
+    toast(on ? 'Wiggle mode — drag to reorder, tap × to delete' : 'Wiggle mode off');
+  },
+  export() { saveJSON(state.export(), `oxy-dashboard-${new Date().toISOString().split('T')[0]}.json`); toast('Exported'); },
+  import(file) {
+    if (!file) return;
+    const r = new FileReader();
+    r.onload = e => {
+      try { state.import(JSON.parse(e.target.result)); render(); toast('Imported'); }
+      catch { toast('Import failed', 'error'); }
+    };
+    r.readAsText(file);
+  },
+  clear() {
+    if (!confirm('Delete ALL data? Cannot undo.')) return;
+    state.reset(); render(); toast('Cleared');
+  }
+};
+
+// --- Events ---
+fab.addEventListener('click', e => {
+  const now = Date.now();
+  if (now - (fab._last||0) < 300) { e.preventDefault(); app.toggleWiggle(); }
+  else { app.openPicker(); }
+  fab._last = now;
 });
 
-// Global for inline handlers
-window.dashboard = dashboard;
+let lp; ['pointerdown'].forEach(e => fab.addEventListener(e, () => lp = setTimeout(() => app.toggleWiggle(), 500)));
+['pointerup','pointerleave','pointercancel'].forEach(e => fab.addEventListener(e, () => clearTimeout(lp)));
+
+$('#pickerClose').onclick = () => app.closePicker();
+pickerModal.onclick = e => { if (e.target === pickerModal) app.closePicker(); };
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') app.closePicker();
+  if ((e.metaKey||e.ctrlKey) && e.key === 'e') { e.preventDefault(); app.export(); }
+  if ((e.metaKey||e.ctrlKey) && e.key === 'i') { e.preventDefault(); $('#importFile').click(); }
+  if (e.key === ' ' && e.target === fab) { e.preventDefault(); app.toggleWiggle(); }
+});
+
+// Settings buttons (inline in picker modal for simplicity)
+function addSettings() {
+  const div = document.createElement('div');
+  div.style.marginTop = '24px';
+  div.innerHTML = `
+    <div class="section-title">Data</div>
+    <button class="settings-btn" onclick="app.export()">Export Dashboard <kbd>⌘E</kbd></button>
+    <button class="settings-btn" onclick="$('#importFile').click()">Import Dashboard <kbd>⌘I</kbd></button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="app.import(this.files[0])">
+    <button class="settings-btn danger" onclick="app.clear()">Clear All Data</button>
+    <div class="section-title">Info</div>
+    <button class="settings-btn" disabled>Version 1.0.0</button>
+  `;
+  pickerGrid.parentNode.appendChild(div);
+}
+addSettings();
+
+// --- Init ---
+render();
+document.body.classList.toggle('wiggle', state.wiggle);
+fab.classList.toggle('done', state.wiggle);
+fab.textContent = state.wiggle ? '✓' : '+';
+$$('.widget').forEach(w => w.draggable = state.wiggle);
 </script>
 </body>
 </html>
